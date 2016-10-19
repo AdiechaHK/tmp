@@ -98,21 +98,7 @@
                             <img id="animateActivities-gif"src="public/images/activityIcons/mapcoming.gif" style="display:none; width:100%; height:100%">
                             <iframe id="ytplayer"   type="text/html" style=" width:99%; height:auto; overflow:hidden"; src="https://www.youtube.com/embed/RUhNjot1nC8?playlist=RUhNjot1nC8&start=7&rel=0&autoplay=1&controls=0&showinfo=0&loop=1&iv_load_policy=3&enablejsapi=1" frameborder="0">
                             </iframe>
-                        </div> 
-                        <script type="text/javascript">
-                            //SOURCE: http://www.addictivetips.com/web/how-to-embed-a-youtube-video-with-the-volume-muted/
-                            function onYouTubeIframeAPIReady() {
-                                var player;
-                                player = new YT.Player('ytplayer', {            
-                                    events: {
-                                        'onReady': function (e) {
-                                             e.target.setVolume(0);
-                                            e.target.mute();
-                                        }
-                                    }
-                                });
-                            }
-                        </script>                                                                   
+                        </div>                                               
                     </div>               
 
                 </div>
@@ -484,22 +470,29 @@
     <script type="text/javascript" src="public/libs/bootstrap/bootstrap-v3.3.6.min.js"></script>
     <!-- All JS plugin Triggers -->
     <!-- Smooth Scroll -->
-
     <script type="text/javascript" src="public/assets/other_assets/smooth-scroll.js"></script>
-    <!--<script type="text/javascript" src="public/assets/lightbox/lightbox.min.js"></script>  --> 
-
+    <!--<script type="text/javascript" src="public/assets/lightbox/lightbox.min.js"></script>  -->  
     <script type="text/javascript" src="public/scripts/homepage-scripts/HOMEPAGE-mainscript.js"></script>
-
     <script type="text/javascript" src="public/scripts/homepage-scripts/HOMEPAGE-css-userpopupwww.js"></script>  
-                    
-    <!--<script type="text/javascript" src="public/assets/lightbox/lightbox.minwww.js"></script>-->
-<!-- scripts-->
-
     
-    <script type="text/javascript">
-     function refreshHomepage() {location.reload();}     
-
-
+    <script type="text/javascript" src="public/assets/lightbox/lightbox.minwww.js"></script>
+<!-- scripts-->
+    <script>
+     function refreshHomepage() {location.reload();}
+     //SOURCE: http://www.addictivetips.com/web/how-to-embed-a-youtube-video-with-the-volume-muted/
+        function onYouTubeIframeAPIReady() {
+            var player;
+            player = new YT.Player('ytplayer', {            
+                events: {
+                    'onReady': function (e) {
+                         e.target.setVolume(0);
+                        e.target.mute();
+                    }
+                }
+            });
+        }
+    
+ 
        
         if (window.inner > 767) {
             $('#slideSection').hide();
@@ -525,8 +518,8 @@
             }
         });
 
-    
-
+    </script>
+    <script type="text/javascript">
     canvas_stars = null;
         $(document).ready(function() {      
         $('.age_info').click(function (e) {
