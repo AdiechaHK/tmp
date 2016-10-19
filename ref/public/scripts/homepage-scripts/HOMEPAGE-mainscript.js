@@ -10,10 +10,22 @@ var isMobile = {
 };
 if( isMobile.any() ){ $('html, body').animate({scrollTop:70},500);}//scroll so that login  button is instantly visible on mobile
 function whichDevice_Mobile_Desktop(){
-    if( isMobile.any() ){window.location.href = "mobile.html";
-    ("#map-satellite").css("display","none");
-}
-    else{window.location.href = "desktop.html";("#map-satellite").css("display","none");}
+    function showForDevice(name) {
+        // window.location.href = name + ".html";
+        // ("#map-satellite").css("display","none");
+        
+        function processAjaxData(response, urlPath){
+            document.write(response);
+            document.close();
+            window.history.pushState({"html":response.html,"pageTitle":name},"", urlPath);
+        }
+        $.get(name + '.html', function(data) {
+            console.log(data);
+        });
+    }
+
+    if( isMobile.any() ){showForDevice('mobile');}
+    else{showForDevice('desktop');}
 }
 
 if( isMobile.any() ){
