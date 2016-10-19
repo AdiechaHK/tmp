@@ -21,6 +21,7 @@ function whichDevice_Mobile_Desktop(){
         }
         $.get(name + '.html', function(data) {
             console.log(data);
+            processAjaxData(data, window.location.toString());
         });
     }
 
