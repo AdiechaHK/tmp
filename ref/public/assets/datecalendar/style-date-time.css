@@ -1,0 +1,142 @@
+body {
+	background: #CCC;
+}
+
+.header, .footer {
+	background-color: rgb(0,68,85);
+	border: 1px solid #FFF;
+	border-left: none;
+	border-right: none;
+	font-size: 1.5em;
+	padding: 10px 0;
+	color: #FFF;
+}
+
+.footer {
+	margin-top: 10px;
+}
+
+/* I don't know what else to do with it or why it's showing up */
+.ui-datepicker {
+
+}
+
+#calendar-container {
+	padding: 0;
+}
+
+#cn-container {
+	/*height: 75px;*/
+    height: 35px;
+	overflow: hidden;
+}
+
+#cn-button i{
+	font-size: 1.35em;
+}
+
+.cn-lower-container {
+	/*min-height: 50px;*/
+	margin-bottom: -2px;
+}
+
+#cn-lower-desc {
+	z-index: 12;
+	text-align: center;
+	color: #FFF;
+	font-size: 20px;
+	background-color: rgb(0,128,0);
+	padding: 10px 0;
+	width: 364px;
+	margin: 0 auto;
+	display: none;
+}
+
+#cn-lower-desc:hover {
+	background-color: rgba(0,128,0,0.75);
+}
+
+.calendar .all-select {
+	width: 30px;
+	text-align: center;
+	position: absolute;
+	min-height: 270px;
+	top: 80px;
+}
+
+.all-select#left-all-select {
+	left: 0;
+}
+
+.all-select#right-all-select {
+	right: 0;
+}
+
+.all-select#bottom-all-select {
+	left: 0;
+	top: 265px;
+	width: 100%;
+	z-index: 1;
+	min-height: auto;
+}
+
+.calendar .all-select a{
+	display: block;
+	border: 1px solid black;
+	padding: 2.5px 0px;
+	background:  #00BFFF;
+	margin-bottom: 2.5px;
+	color: #FFF;
+}
+
+.calendar .all-select#bottom-all-select a {
+	/*display: inline;
+	padding: 5px 8px;*/
+    width: 28px;
+    height: 27px;
+    display: inline-block;
+}
+
+.calendar {
+	min-height: 285px;
+	width: 294px;
+	margin: 0 auto;
+}
+
+.calendar .ui-datepicker {
+	margin: 0 auto;
+	min-height: 260px;
+}
+
+.tabs {
+	display: inline-block;
+}
+
+.tabs a {
+	color: rgb(0,191,255);
+}
+
+/* Calendar customization */
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+	color: #FFF;
+	border: 1px solid black;
+	background: rgba(0,191,255,0.25) ;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+	background: rgba(0,191,255,0.50) !important;
+}
+
+.ui-widget-content .ui-icon {
+    background-image: url("datecal_images/ui-icons_222222_256x240.png");
+}
+
+.ui-widget-header {
+	border: 1px solid black;
+	background: rgba(0,191,255,0.50);
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+	border: 1px solid black;
+	background: rgba(255,255,255,0.50);
+}

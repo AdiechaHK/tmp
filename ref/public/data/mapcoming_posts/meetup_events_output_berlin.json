@@ -1,0 +1,43 @@
+var findMeetupEventsObj= [
+    {
+        "postedTitle": "Sunday climbing at Magic Mountain",
+        "postedID": "gpkgjlytlbvb",
+        "Source": "meetup",
+        "StartDate": "2015-08-16 16:00",
+        "EndDate": "",
+        "AttendingCount": 9,
+        "source_pageURL": "http://www.meetup.com/Berlin-Rock-Climbing-and-Bouldering-Meetup/events/224205998/",
+        "MeetupGroupUrl": "http://www.meetup.com/Berlin-Rock-Climbing-and-Bouldering-Meetup/",
+        "Address": "BÃ¶ttgerstr. 20-26",
+        "City": "Berlin",
+        "Country": "de",
+        "Latitude": 52.548584,
+        "Longitude": 13.3819,
+        "venueID": 23714452,
+        "venueName": "Magic Mountain Kletterhallen GmbH",
+        "CategoryID": 23,
+        "CategoryName": "Outdoors & Adventure",
+        "Description": "<p><img src=\"http://photos2.meetupstatic.com/photos/event/6/8/b/f/600_439466815.jpeg\" /></p> <p>Magic Mountain is a huge climbing center in Wedding. It has hundreds of sport climbing routes as well as bouldering. <a href=\"http://www.magicmountain.de/\" class=\"linkified\">http://www.magicmountain.de/</a> and apparently a gym and sauna!</p> <p>The cost is based on how many hours you climb for around 4 hours so the entry would be 15EUR (or 12 for students). You can also rent climbing shoes, harnesses and belay devices if you don't have them. I'll be arriving around 4:00pm and I'll wait outside for about 10 minutes. My friend designed some nice Meetup posters so it will be easy to find us if you want to come later.Â </p> <p>We'll be mainly doing top-roping with the possibility of a bit of lead climbing if people bring ropes. If you're a beginner and you wouldn't be confidant belaying another climber, could you please post a comment or write me a message. That will help us make sure we have enough experienced climbers to belay everyone.</p>"
+    },
+    {
+        "postedTitle": "Play easy jazz in the park",
+        "postedID": "qfcvjlytlbvb",
+        "Source": "meetup",
+        "StartDate": "2015-08-16 16:00",
+        "EndDate": "2015-08-16 19:00",
+        "AttendingCount": 5,
+        "source_pageURL": "http://www.meetup.com/Jazzpicnic-an-experiment-im-volkspark/events/224228036/",
+        "MeetupGroupUrl": "http://www.meetup.com/Jazzpicnic-an-experiment-im-volkspark/",
+        "coverImageUrl": "http://photos1.meetupstatic.com/photos/event/3/7/8/0/600_440294208.jpeg",
+        "Address": "Hasenheide 75, opposite Graeferstrasse",
+        "City": "Berlin",
+        "Country": "de",
+        "Latitude": 52.484962,
+        "Longitude": 13.415419,
+        "venueID": 21606772,
+        "venueName": "Hasenheide",
+        "CategoryID": 21,
+        "CategoryName": "Music",
+        "Description": "<p><b>Bring your instruments to the park! Singers, horns, guitars, ukuleles, banjos, violins, kazoos... anything goesÂ </b>(we <i>only</i> use a small amp for vocals and some backing tracks ).Â </p> <p><img src=\"http://photos2.meetupstatic.com/photos/event/9/e/d/c/600_439180668.jpeg\" /></p> <p>We'll play stuff out of the real book, all jazz genres, easy and a bit more advanced, or improvise on easy lead sheets ( simple early swing and gypsy, minor and major blues, turnarounds and so on ). Let's have fun!</p> <p>You can check out our list of songs in the group discussion forum and add suggestions:<br/><a href=\"http://www.meetup.com/de/Jazzpicnic-an-experiment-im-volkspark/messages/boards/thread/49080191\"><a href=\"http://www.meetup.com/de/Jazzpicnic-an-experiment-im-volkspark/messages/boards/thread/49080191\" class=\"linkified\">http://www.meetup.com/de/Jazzpicnic-an-experiment-im-volkspark/messages/boards/thread/49080191</a></a></p> <p><br/>Bring along some drinks and a snack, and maybe some nice picnic blankets ;)Â </p> <p>We will provide:</p> <p>- some sheet music and backing tracks, but bring along your own if you have any.<br/>- a mic for vocals<br/>- a music stand<br/>- small percussion, shakers andÂ tambourine</p> <p>**Â <b><i>Only</i>Â <i>musicians</i>Â </b>should sign up but they can <b>bring</b> <b>friends</b> along of course **</p> <p><b>How to find us:</b></p> <p>We meet at the entrance of Hasenheide Park opposite Graefestrasse. We continue further inwards to a rectangular space with a bench, surrounded by a low stone wall and trees.Â </p> <p><img src=\"http://photos1.meetupstatic.com/photos/event/2/0/5/6/600_438428278.jpeg\" /></p> <p>The spot looks like this. If you arrive later, you start from the entrance of the park, just walk 7 minutes up the hill. On the right hand side at a crossroad you will find the space.</p> <p><img src=\"http://photos1.meetupstatic.com/photos/event/1/3/d/3/600_438245075.jpeg\" /></p>"
+    }
+]

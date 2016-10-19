@@ -1,0 +1,459 @@
+
+/*body {
+    font-family: 'Droid Sans', 'Helvetica', Arial, sans-serif;
+    margin: 5px;
+}*/
+
+@charset "utf-8";
+/*---------- CSS Reset Start --------------------------*/
+html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+    margin: 0;padding: 0; border: 0; font-size: 100%; font: inherit; /*vertical-align: baseline;*/ }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+    body {line-height: 1;}
+    ol, ul {list-style: none;}
+    blockquote, q {quotes: none;}
+    blockquote:before, blockquote:after, q:before, q:after {content: '';content: none;}
+    table {border-collapse: collapse; border-spacing: 0; }
+    /* html, body, section,nav, ul, li, div,h1,h2,h3,p, img{display: block; padding: 0px; margin: 0px auto; }*/
+    a{text-decoration: none;}
+
+
+
+html,
+body,
+#map-canvas {position:fixed; width:100%; height: 100%; margin: 0; padding: 50; }
+#map-satellite {width: 80px; height: 80px; margin: 0px; margin-bottom: -30px; border: thin solid; border-color: white; }
+
+
+/*===================== main header buttons begin here=======================*/
+    .menu-mainNav{position:relative; background-color:#f0f0f0; float:right; width:52px; height:52px !important; margin:0px 5px; margin-top:25px; border:2px solid #ddd; -moz-border-radius:30px; -webkit-border-radius:30px; border-radius:30px;
+        -moz-box-shadow:1px 1px 3px #555; -webkit-box-shadow:1px 1px 3px #555; box-shadow:1px 1px 3px #555; cursor:pointer; overflow:hidden; font-family: "Trebuchet MS", sans-serif; font-size: 24px !important; font-weight: bold; z-index:1; }
+    .menu-mainNav:hover{border: 1px solid #355427;};
+    @media (min-width: 400px) and (max-width: 600px) {.menu-mainNav{margin:20px 20px;}}
+    @media (min-width: 600px) and (max-width: 990px) {.menu-mainNav{margin:0px 20px;}}
+    @media (min-width: 990px) {.menu-mainNav{margin:0px 30px;}
+
+    .menu-mainNav2{margin-left:100px !important; padding-left:100px; padding-right:100px;}}
+    .menu-link{position:absolute; left:0px; top:0px; width:48px; height:48px; }
+    /*../public/images/desktop-menu-images/*/
+    .icon_home{background:transparent url(../../images/desktop-menu-images/home.png) no-repeat top left;}
+    .icon_mail{background:transparent url(../../images/desktop-menu-images/mail.png) no-repeat top left;}
+    .icon_help{background:transparent url(../../images/desktop-menu-images/help.png) no-repeat top left;}
+    .icon_find{background:transparent url(../../images/desktop-menu-images/find.png) no-repeat top left;}
+    .icon_photos{background:transparent url(../../images/desktop-menu-images/photos.png) no-repeat top left;}
+    .menu-mainNav_content{position:absolute; height:52px; width:150px; overflow:hidden; left:56px; top:20px; background:transparent; display:none; }
+    .menu-mainNav_content h2{ color:#aaa; text-shadow: 1px 1px 1px #fff; background-color:transparent; font-size:14px;}
+    .menu-mainNav_content a{background-color:transparent; float:left; margin-right:7px; margin-top:3px; color:#bbb; text-shadow: 1px 1px 1px #fff; text-decoration:none; font-size:12px; }
+    .menu-mainNav_content a:hover{ color:#0b965b; }
+/*====================== main header buttons end here========================*/
+
+
+
+
+/*====================== main FOOTER buttons starts here========================*/
+    /* Circular Toolmyspace-outer (SO) * http://stackoverflow.com/q/13132864/1397351
+      generic styles for btn-myspace & circular menu */
+    .footer-myspace {
+      position: absolute;
+      bottom: calc(0% - 30px); left: 41%;
+      font: 1.5em/1.13 Verdana, sans-serif;
+      transition: .5s;
+    }
+    /* generic link styles */
+    a.footer-myspace, .footer-myspace a {
+      display: block;
+      opacity: 1;
+      background: white;
+      color: red;
+      text-align: center;
+      text-decoration: none;
+      text-shadow: 0 -1px dimgrey;
+    }
+    a.footer-myspace:hover, .footer-myspace a:hover, a.footer-myspace:focus, .footer-myspace a:focus { background: gray }
+    a.footer-myspace:focus, .footer-myspace a:focus { outline: none; }
+    .btn-myspace {
+      z-index: 200;
+      margin: -.625em;
+      width: 3.25em; height: 3.25em;
+      border-radius: 50%;
+      box-shadow: 0 0 3px 1px white;
+      padding-top:10px;
+    }
+    /* circular menu */
+    .myspace-outer {
+      z-index: 100;
+      /**outline: dotted 1px white;/**/
+      margin: -6em -5em;
+      width: 12em; height: 12em;
+      transform: scale(.001);
+      list-style: none;
+      opacity: 0;
+    }
+    /* the ends of the menu */
+    .myspace-outer:before, .myspace-outer:after {
+      position: absolute;
+      top: 34.3%;
+      width: .5em; height: 14%;
+      opacity: .56;
+      background: white;
+      content: '';
+    }
+    .myspace-outer:before {
+      left: 5.4%;
+      border-radius: .25em 0 0 .25em;
+      box-shadow: -1px 0 1px dimgrey, inset 1px 0 1px white, inset -1px 0 1px grey, 
+            inset 0 1px 1px white, inset 0 -1px 1px white;
+      transform: rotate(-75deg);
+    }
+    .myspace-outer:after {
+      right: 5.4%;
+      border-radius: 0 .25em .25em 0;
+      box-shadow: 1px 0 1px dimgrey, inset -1px 0 1px white, inset 1px 0 1px grey,
+            inset 0 1px 1px white, inset 0 -1px 1px white;
+      transform: rotate(75deg);
+    }
+    /* make the menu appear on click */
+    .btn-myspace:focus + .myspace-outer {
+      transform: scale(1);
+      opacity: 1;
+    }
+    /* myspace-inners of the circular menu */
+    .myspace-inner { overflow: hidden; position: absolute; 
+        /**outline: dotted 1px yellow;/**/ width: 50%; height: 50%; transform-origin: 100% 100%; }
+    /* 
+     * rotate each myspace-inner at the right angle = (A/2)° + (k - (n+1)/2)*A°
+     * where A is the angle of 1 myspace-inner (30° in this case)
+     * k is the number of the myspace-inner (in {1,2,3,4,5} here)
+     * and n is the number of myspace-inners (5 in this case)
+     * formula works for odd number of myspace-inners (n odd)
+     * for even number of myspace-inners (n even) the rotation angle is (k - n/2)*A°
+     * 
+     * after rotating, skew on Y by 90°-A°; here A° = the angle for 1 myspace-inner = 30° 
+     */
+    .myspace-inner:first-child { transform: rotate(-45deg) skewY(60deg); }
+    .myspace-inner:nth-child(2) { transform: rotate(-15deg) skewY(60deg); }
+    .myspace-inner:nth-child(3) { transform: rotate(15deg) skewY(60deg); }
+    .myspace-inner:nth-child(4) { transform: rotate(45deg) skewY(60deg); }
+    .myspace-inner:last-child { transform: rotate(75deg) skewY(60deg); }
+    /* covers for the inner part of the links so there's no hover trigger between
+       star btn-myspace & menu links; give them a red background to see them */
+    .myspace-inner:after {
+      position: absolute; top: 32%; left: 32%; width: 136%; height: 136%; border-radius: 50%;
+      /* "unskew" = skew by minus the same angle by which parent was skewed */
+      transform: skewY(-60deg); content: '';
+    }
+    /* menu links */
+    .myspace-inner a {width: 200%; height: 200%; border-radius: 50%;
+      box-shadow: 0 0 3px dimgrey, inset 0 0 4px white;
+      /* "unskew" & rotate by -A°/2 */
+      transform: skewY(-60deg) rotate(-15deg);
+      background: /* lateral separators */
+          linear-gradient(75deg, 
+        transparent 50%, grey 50%, transparent 54%) no-repeat 36.5% 0,
+          linear-gradient(-75deg, 
+        transparent 50%, grey 50%, transparent 54%) no-repeat 63.5% 0,
+        /* make sure inner part is transparent */
+        radial-gradient(rgba(127,127,127,0) 49%, 
+              rgba(255,255,255,.7) 51%, #c9c9c9 52%);
+      background-size: 15% 15%, 15% 15%, cover;
+      line-height: 1.4;
+    }
+    /* arrow for middle link */
+    .myspace-inner:nth-child(3) a:after {
+      position: absolute; top: 13%; left: 50%; margin: -.25em; width: .5em; height: .5em; box-shadow: 2px 2px 2px white;
+      transform: rotate(45deg); background: linear-gradient(-45deg, #c9c9c9 50%, transparent 50%); content: '';
+    }  
+    .myspace-inner i{color:black};
+/*========== main FOOTER menu ends here -=====================================*/
+
+
+
+
+/*========== CSS Reset End -=====================================*/
+
+
+/*========================FIND EVENTS starts here====================================*/ 
+    .flex-container { display: -webkit-flex; display: flex; -webkit-justify-content: center; justify-content: center; width: 100%; padding:10px; }
+    /*.isInterExplorer{margin-left:-30px !important;}*/
+    .Envelope_prev{ margin-top: 2px; margin-bottom: 2px; font-family: Arial, sans-serif; width: 100%; padding: 2px; padding-bottom: 2px; color: #777; z-index:0; }
+    .Envelope_prev > section{background: white; width: 100%; padding: 2px;padding-bottom: 10px !important;}
+    .PostedBy > img{float: left;margin-left: -5px;}
+    .PostedBy p{font-size: .7em; line-height: 1.1; margin-left:20px !important;}
+    .PostedBy a{font-size: 1.1em; font-weight: bold; color: #615998; margin-left:10px !important;}
+    .MyRating{font-size: .7em; clear: left; float: left;  margin-left:10px; padding: 2px 0 2px 0;}
+    .NumbView{font-size: .7em; float: right; margin-right:0px; padding: 2px 2px 2px 0; }
+
+    .Title_prev{font-size: .9em; font-weight: bold; color: #000; margin: 5px 0 0 5px; overflow:hidden; text-overflow:clip; }
+    .details_prev{ font-size: .9em; color: #758FDC; margin: 5px 0 0 5px; overflow:hidden; text-overflow:clip; }
+    .Date_prev{font-size: 30px; color: #ec1c2b; } /*color: #000;*/
+    .Date_prev span{ font-size: 18px;color: #000;margin-top:-20px !important}
+    .Time_prev{width:100%; font-size: .7em; margin: 0 auto }
+    .Address_prev{margin: 0 auto, word-wrap: break-word;overflow:hidden; text-overflow:clip}
+
+    .NumbInterest_prev{ font-size: .7em; }
+    .ImInterested_prev{ background: #333333; font-size: .7em; color: #FFFFFF; width: 120px; height: 30px; border:1px solid #e9eaed;}
+    .ImInterested_prev:hover{opacity:0.5;}
+    /*a#prev-snapmap-events { height: 100vh; overflow: scroll; margin: 0 auto; width: 100%; max-height: 1200px;padding: 0;}*/
+
+/*===================-FIND EVENTS ends here==============================*/
+
+
+
+
+
+
+/*=========================POST/CREATE EVENTS starts here==========================*/
+    /*Drag and Drop CSS*/
+    .url-upload {padding-top: 20px;}
+    .url-text { padding: 6px; float:left; width: 90%; }
+    .upload_button { position:absolute; float: left; border: 1px solid #666666; padding: 6px 10px; background:#568203; border-left: 0px solid #fff; cursor:pointer; }
+    .url-btn {float: right;}
+    #upload_zone{padding: 15px 20px 5px;}
+    .profile_box{ position:relative; float:left; min-width:275px; }
+    .profile_box h2{position: absolute; top: 18px; left: 70px; float: left; margin: 0px; padding: 0px; font-weight: normal; font-size: 14px !important; text-transform: capitalize !important;   }
+    .profile_box img{ width:60px; float:left;padding-left:5px; }
+    .view_box{margin-left: 75%; /*float; right*/ margin-top:18px;  }
+    .video_container{ margin-top: 10px; margin-bottom:10px; }
+    .border_class { padding-bottom: 10px; padding-top: 10px; padding-left: 0px; border-bottom: 1px solid rgb(229, 229, 229);}
+    .media-left a i {color: rgb(118, 118, 118);}
+    .media-left span:hover{cursor:pointer;}
+
+
+    .form_title, .form_description, .form_date_1, .form_date_2, .form_time_1, .form_time_2, .form_street, .form_place, .descriptags, .tags_description{font-size: 10px; width: 92%; height: 50px; margin: 0 0 5px 0; padding: 2.5px 5px;border: 0px; background:#D3D3D3 !important}
+    .form_title, .form_description, .form_street, .form_place, .descriptags, .tags_description{width: 90%;}
+    .form_date_1, .form_date_2, .form_time_1, .form_time_2{width: calc(45% - 2.5px);}
+    .form_description, .form_date_2, .form_time_2, .form_place, .tags_description{ display: none; }
+    .form_description_add, .form_date_add, .form_time_add, .form_place_add, .tags_description_add{width: 14px!important; cursor: pointer; }
+    .full_width{width: 90% !important;}
+    .form_description, .tags_description{height:150px;}
+/*======================POST/CREATE EVENTS ends here====================================*/
+
+
+.panel-body .gmarkers { margin: 0 0 0 10px; font-family: roboto; }
+.panel-body { border-top: 0; padding: 10px 15px; border-top-color: #000 !important; font-size:17px; color: #333333 !important }
+.panel-body:hover {background: #4F4F2F!important; color: #fff !important }
+
+.mp-menu {margin-top: 50px;overflow:hidden !important; transition: left 1s;  -webkit-transition: left 1s; -moz-transition: left 1s; -o-transition: left 1s; }
+.mp-menu ul li > a {width: 90%;}
+.mp-menu ul li > a::before {float: right;}
+.mp-menu h2 {width: 100%;}
+.mp-menu h2 i {margin-right: 5%;}
+.remove_shadow_mp-menu:hover {background: #fff !important;}
+input[type="checkbox"], input[type="radio"] {margin: 4px 8px 0 0;}
+
+.gm-style {font-family: citrixsans-regular, Helvetica, sans-serif !important;}
+.gm-fullscreen-control {display: none;/*remove  fulscreen icon on google map  street view*/}
+/*.gm-style > div:nth-child(10){display:none;} same as above*/
+.gm-svpc {/* style the yellow pegman street view*/ background:#F8F8FF !important;  display:block ; border: 1px solid black; margin-top:-80px;margin-left:-12px;padding:17px !important; border-radius: 25px !important; }
+.gm-svpc:hover{background:#8DB600 !important;}
+.zoom-mylocation2 {position:absolute; margin-left:-40px !important; margin-top:50px !important;}
+.zoom-mylocation {display:none;}
+.zoom-mylocation a{ text-align: center;float: left; width: 36px;height: 36px;border: 1px solid black; background:#F8F8FF; border-radius: 100%;margin-right: 7px; /*space between*/} 
+.zoom-mylocation a i{font-size: 30px;line-height: 34px;color: #292421;}
+.zoom-mylocation  a :hover{color: #8DB600;}
+.mobileCompressZoom{display:block };
+.isInterExplorerr{right:100px !important;}
+
+.controls {padding: 6px; z-index: 105; border: 1px solid transparent; border-radius: 2px 0 0 2px; box-sizing: border-box; -moz-box-sizing: border-box; width: 50%; outline: none; }
+.ccccc {margin-left: 1px; padding-top: 20px;padding-bottom: 20px; border-bottom: 1px solid #80804c; }
+
+/* large desktop layout: 1280px. */
+/* medium desktop layout: 1280px. */
+/* tablet layout: 768px */
+/*mobile layout: 320px */
+.subfold_who { padding: 20px 100px 12px 2px }
+.subfold_where{padding: 20px 110px 12px 2px;}
+.subfold_active {padding: 20px  35px 12px 2px;}
+.subfold_give {padding: 20px 45px 12px 2px;}
+.subfold-login {padding: 30px 160px 30px 2px;}
+.subfold-logout {padding: 30px 147px 30px 2px;}
+.subfold-showup {color: white; padding: 35px 45px 57px 5px;}
+.mypages{padding: 10px 127px 10px 20px;margin-left:0px !important;}
+.addfunds{padding: 30px 177px 30px 20px;margin-left:0px !important;}
+.reservation{padding: 30px 132px 30px 20px;margin-left:0px !important;}
+.account-history{padding: 30px 174px 30px 20px;margin-left:0px !important;}
+
+/*.subfold-fb {   margin-left:-50px !important; padding: 30px 40px 30px 70px !important}
+.subfold-eb {   margin-left:-50px !important; padding: 30px 32px 30px 70px;}
+.subfold-meetup{margin-left:-50px !important; padding: 30px 68px 30px 70px;}
+.subfold-yelp { margin-left:-50px !important; padding: 30px 112px 30px 70px;}*/
+
+.topMargin-165 { margin-top: -165px; }
+.topMargin-130 { margin-top: -130px; }
+.topMargin-95 { margin-top: -95px; }
+.topMargin-60 { margin-top: -60px; }
+.topMargin-20 { margin-top: -20px; }
+.topMargin-53 { margin-top: -27px }
+.topMargin-2 { margin-top: -2px;}
+.topMargin8 {margin-top: 8px !important;}
+.topMargin30 {margin-top: 30px}
+
+
+body > .container-fluid:first-child {height: auto !important;z-index:99 !important;}
+
+
+img.sidebar_logo {
+    max-width: 90px;
+}
+
+
+/*@media only screen and (max-width: 768px) {.left_side a:last-child { display: none; }}*/
+.mp-levelX {margin-top:60px; overflow:hidden !important}
+.mnavaa {overflow: hidden !important; z-index: 9999; width: 100%;  height: calc(100% - 95px); background:#fff !important }
+.mnavaa:hover {overflow-y: auto !important;}
+
+.menu-shadow{margin-left:-5px; background:#fff !important;
+    -webkit-box-shadow: -5px 0 5px -5px black, 5px 0 5px -5px black !important;
+   -moz-box-shadow:-5px 0 5px -5px black, 5px 0 5px -5px black !important;
+  box-shadow:-5px 0 5px -5px black, 5px 0 5px -5px black !important;
+}
+
+/*========= START .return-to-top scrolls mnavaa  back to the top most content====================*/
+.return-to-top {position: fixed; z-index:999; bottom: 60px; left: 5px;  width: 50px; height: 50px; display: block;
+    text-decoration: none;display: none; border: solid 1px #555; background-color: #748631; 
+    -webkit-border-radius: 35px; -moz-border-radius: 35px; border-radius: 35px;
+    -webkit-transition: all 0.3s linear; moz-transition: all 0.3s ease; -ms-transition: all 0.3s ease; -o-transition: all 0.3s ease; transition: all 0.3s ease;
+    -webkit-box-shadow: 5px -1px rgba(0,0,0,0.6); -moz-box-shadow: 5px -1px rgba(0,0,0,0.6);  -o-box-shadow: 5px -1px rgba(0,0,0,0.6); box-shadow: 5px -1px rgba(0,0,0,0.6);
+}
+.return-to-top i {
+    color: #fff; margin: 0; position: relative; left: 16px; top: 14px; font-size: 19px;
+    -webkit-transition: all 0.3s ease; -moz-transition: all 0.3s ease; -ms-transition: all 0.3s ease;  -o-transition: all 0.3s ease; transition: all 0.3s ease;
+}
+.return-to-top:hover {background: rgba(0, 0, 0, 0.9);}
+.return-to-top:hover i {color: #fff;top: 5px;}
+/*=========END .return-to-top scrolls mnavaa  back to the top most content====================*/
+
+
+
+span#address {color: #ffffff; font-weight: 500;}
+.cn-menu h2 {width: 95%;}
+
+.pac-input {border: 2px solid #878681;}
+.panel-body {font-size: 16px; padding: 20px 5px 20px 5px; border-bottom: 0.1px solid rgba(255, 255, 255, 0.4);}
+.pac-input {border: 2px solid #878681; /*left: 73px !important; top: 120px !important;*/ }
+
+#radius-input { position: absolute; top: 20px !important; width: 297px; margin-left: 200px; z-index: 99999; background: #568203;  display: none }
+#radiusValue {width: 147px; }
+
+#enter-nextSearch {position: absolute; top: 65px; margin-left: 530px; padding-top: 3px; float:right; cursor: pointer; z-index: 1; color: #568203; }
+#enter-nextSearch:hover {color: #355427; }
+
+#enter-nextSearch{ margin-top: 45px; left: 131px !important;}
+.yyyy:hover #enter-nextSearch{left: 200px !important;}
+#radius-input {top:70px !important; margin-left: -72px;}
+
+span#postNextEvent {left: 200px;}
+
+
+
+
+/*@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");*/
+.container-search {overflow: hidden; width: 100%; vertical-align: middle; white-space: nowrap; }
+
+/*Below the input doesn’t have the transition because it’s not the element being affected this time around.*/
+.container-search input#search {width: 100%; height: 40px; float: left; padding-left: 15px; padding-right: 50px; background: #414F12; border: none; font-size: 12pt; }
+
+/*The snippet to recolor the placeholders*/
+.container-search input#search::-webkit-input-placeholder {color: #FFA;}
+.container-search input#search:-moz-placeholder { /* Firefox 18- */ color: #FFA; }
+.container-search input#search::-moz-placeholder { /* Firefox 19+ */ color: #FFA; }
+.container-search input#search:-ms-input-placeholder { color: #FFA; }
+
+/*the code to style the button that appears on hover.*/
+.container-search i.icona {
+    -webkit-border-top-right-radius: 5px; -webkit-border-bottom-right-radius: 5px; -moz-border-radius-topright: 5px; moz-border-radius-bottomright: 5px;
+    border-top-right-radius: 5px; border-bottom-right-radius: 5px;  
+    height: 40px; width: 50px;border: none; background: #568203; color: #4f5b66; opacity: 0; font-size: 10pt;
+    -webkit-transition: all .55s ease; -moz-transition: all .55s ease; -ms-transition: all .55s ease; -o-transition: all .55s ease; transition: all .55s ease;
+}
+
+/*Adding the Hover Effects*/
+.container-search:hover i.icona, .container-search:active i.icona, .container-search:focus i.icona {outline: none; opacity: 1; margin-left: -50px; cursor: pointer; }
+.container-search:hover i.icona:hover { background: #003300; }
+
+input[type="checkbox"] {display: none;}
+input[type="checkbox"], input[type="radio"] {vertical-align: middle; }
+input[type="checkbox"] + label, input[type="radio"] + label {  cursor: pointer; }
+input[type="checkbox"] + label:before, input[type="radio"] + label:before {content: ""; display: inline-block; height: 19px; margin: 1px 4px 0 -22px; vertical-align: middle; width: 19px; }
+input[type="checkbox"] + label:before {background: url(http://d3pr5r64n04s3o.cloudfront.net/tuts/391_checkboxes/check_radio_sheet.png)left top no-repeat;}
+input[type="checkbox"]:checked + label:before {background: url(http://d3pr5r64n04s3o.cloudfront.net/tuts/391_checkboxes/check_radio_sheet.png)-19px top no-repeat;}
+input[type="radio"] + label:before {background: url(http://d3pr5r64n04s3o.cloudfront.net/tuts/391_checkboxes/check_radio_sheet.png)-38px top no-repeat; }
+input[type="radio"]:checked + label:before {background: url(http://d3pr5r64n04s3o.cloudfront.net/tuts/391_checkboxes/check_radio_sheet.png)-57px top no-repeat;}
+
+
+
+
+.btn-active { padding: 10px !important; width: 53px !important; background: #336ca6; color: #000;}
+.btn-inactive {padding: 10px !important; width: 53px !important; background: #568203; color: #000; }
+.btn-route { padding: 10px !important; height: 40px !important; width: 48px !important; border-top-left-radius: 0px; border-top-right-radius: 0px; background: #fff; color: #568203; border-color: #568203; }
+.btn-route:hover {background-color: #e0e0e0; }
+
+.rotate_90deg { padding: 5px; -webkit-transform: rotate(90deg); -moz-transform: rotate(90deg); -o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(90deg); color: black; }
+.route-input1 {height: 35px !important; width: 212px !important; margin-left: -48px !important; padding-left: 60px; padding-right: 10px; padding-bottom: 4px; background: #fff; }
+.route-input2 { height: 35px !important; width: 212px !important; margin-left: -48px !important; padding-left: 40px; padding-right: 10px; padding-bottom: 4px; background: #fff; }
+.fromTo {height: 35px !important; width: 10px !important; margin-left: -1px !important; padding-left: 10px; padding-right: 10px; padding-bottom: 4px;}
+
+.btn-Tmargin-40 {margin-top: -40px !important;}
+.btn-Tmargin-40 {margin-top: -40px !important;}
+.btn-Tmargin5 {margin-top: -5px !important;}
+.btn-Tmargin-40 {margin-top: -40px !important;}
+.btn-Tmargin50 {margin-top: 0px !important;}
+.btn-Tmargin55 {margin-top: -55px !important;}
+.btn-Lmargin0 {margin-left: 0px !important;}
+.btn-Lmargin55 {margin-left: 55px !important;}
+.btn-Lmargin110 {margin-left: 110px !important;}
+.btn-Lmargin165 {margin-left: 165px !important;}
+.btn-Lmargin220 {margin-left: 220px !important;}
+.btn-shine {border-color: #336ca6;}
+.leftMargin4 {margin-left: 4px !important;}
+.leftMargin52 {margin-left: 52px !important;}
+.leftMargin100 {margin-left: 100px !important;}
+.leftMargin148 {margin-left: 148px !important;}
+.leftMargin196 {margin-left: 196px !important;}
+.leftMargin-20 {margin-left: -20px !important;}
+.topMargin-165 {margin-top: -165px;}
+.topMargin-130 {margin-top: -130px;}
+.topMargin-95 {margin-top: -95px;}
+.topMargin-75 {margin-top: -75px;}
+.topMargin-70 {margin-top: -70px;}
+.topMargin-60 {margin-top: -60px;}
+.topMargin-20 {margin-top: -20px;}
+.topMargin-53 {margin-top: -27px}
+.topMargin-2 {margin-top: -2px;}
+.topMargin10 {margin-top: 10px !important;}
+.topMargin30 {margin-top: 30px !important;}
+.topMargin8 {margin-top: 8px !important;}
+.rightMargin-17 {margin-right: -17px}
+.floatRight {float: right;}
+.floatLeft {float: left;}
+.leftMargin-42 {margin-left: -42px; }
+.leftMargin-2 {margin-left: -2px; }
+.leftMargin-5 {margin-left: -5px;}
+.leftMargin4 { margin-left: 4px; }
+.leftMargin20 {margin-left: 20px}
+.leftMargin52 {margin-left: 52px}
+.white-icon {color: #fff; float: right;}
+.hideflow {overflow: hidden !important; }
+.hidexflow {overflow: hidden !important;}
+.hideyflow {overflow: hidden !important;}
+.fixedpos1 {position: fixed !important;}
+.z-index2 {z-index: 2;}
+.fontSize20 {color: black;font-size: 20px}
+.fontSize18 {font-size: 18px !important;}
+.white-backG {background: #fff}
+.gray-color {color: #333333 !important}
+.postEvent-popup {float: left; margin-top: -10px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 11px; background-color: #568203; color: #FFF; font-size: 25px; }
+.post2Event_popup{ float: center; position: fixed; background-color: #FFF; border: 2px solid #568203; border-radius: 3px; background-position: left -3px top -3px; width: 280px; height: 50px; z-index: 9; padding-top: 10px; padding-bottom: 10px; font-size: 25px; }

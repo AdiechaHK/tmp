@@ -1,0 +1,367 @@
+/*-----------------FIND EVENTS starts here------------------------*/
+@charset "utf-8";
+/*---------- CSS Reset Start --------------------------*/
+html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    /*vertical-align: baseline;*/
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+    display: block;
+    }
+    body {
+    line-height: 1;
+    }
+    ol, ul {
+    list-style: none;
+    }
+    blockquote, q {
+    quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+    content: '';
+    content: none;
+    }
+    table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+    /*
+    html, body, section,nav, ul, li, div,h1,h2,h3,p, img{
+	display: block;
+	padding: 0px;
+	margin: 0px auto;
+    }*/
+    a{text-decoration: none;}
+
+
+/*========== CSS Reset End -=====================================*/
+
+
+
+.mp-back {
+  position: relative; display: block; text-transform: uppercase; font-weight: 700; font-size: 0.8em; padding: 1em;
+  background: #F7F6ED; outline: none;color: #8E6B23; box-shadow: inset 0 1px rgba(0,0,0,0.1);
+  -webkit-transition: background 0.3s; -moz-transition: background 0.3s; transition: background 0.3s;
+}
+.mp-back::after {font-family: 'FontAwesome'; position: absolute; content:   "\f04b"; padding-top:3px; right: 15px; font-size: 0.6em; color: #8E6B23; /*rgba(0,0,0,0.3);*/ }
+
+
+
+
+
+/*=================TOP RIGHT SUB_MENU begins here===========================================*/
+.path-nav {position: fixed; z-index: 11; -moz-transform: translateZ(0); -webkit-transform: translateZ(0); -o-transform: translateZ(0); -ms-transform: translateZ(0); transform: translateZ(0);}
+.path-nav.path-nav-top-right { top: 0px; right: 0px; }
+.path-nav a { position: relative; z-index: 1; display: block; width: 60px; height: 60px; line-height: 48px;  
+  border: 6px solid white; background: #44403d; border-radius: 50%; color: #fff; text-align: center; font-size: 26px;cursor:pointer;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1); -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1); box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+ }
+
+.path-nav ul { position: absolute; top: 0px; left: 2px; margin: 0; padding: 0; }
+
+.path-nav li {position: absolute; display: block; top: 0; left: 0;
+  -moz-transition-property: all; -webkit-transition-property: all; -o-transition-property: all; transition-property: all;
+  -moz-transition-duration: 1.0s; -webkit-transition-duration: 1.0s; -o-transition-duration: 1.0s; transition-duration: 1.0s;
+  -moz-transition-timing-function: cubic-bezier(0.25,0.1,0.25,1); -webkit-transition-timing-function: cubic-bezier(0.25,0.1,0.25,1);
+  -o-transition-timing-function: cubic-bezier(0.25,0.1,0.25,1); transition-timing-function: cubic-bezier(0.25,0.1,0.25,1);/*cubic-bezier(0.175, 0.885, 0.320, 2.275);*/
+  -moz-transition-delay: 0.175s; -webkit-transition-delay: 0.175s; -o-transition-delay: 0.175s; transition-delay: 0.175s;
+}
+
+.path-nav:target li {-moz-transform: rotate(360deg); -webkit-transform: rotate(360deg); -o-transform: rotate(360deg); -ms-transform: rotate(360deg); transform: rotate(360deg); }
+
+.path-nav:target .cross {
+  -moz-transform-origin: 50% 50%; -webkit-transform-origin: 50% 50%; -o-transform-origin: 50% 50%; -ms-transform-origin: 50% 50%; transform-origin: 50% 50%; 
+  -moz-transform: rotate(-270deg); -webkit-transform: rotate(-270deg); -o-transform: rotate(-270deg); -ms-transform: rotate(-270deg); transform: rotate(-270deg);
+}
+
+.path-nav .path-nav-expander .cross { -moz-transition: all 0.15s; -webkit-transition: all 0.15s; -o-transition: all 0.15s; transition: all 0.15s; }
+.path-nav.path-nav-top-right:target li:nth-child(1) { z-index:99; top: 0px; left: -2px; }
+.path-nav.path-nav-top-right:target li:nth-child(2) { top: 100px; left: -2px;}
+.path-nav .path-nav-expander, .path-nav .path-nav-close { z-index: 3; width: 60px; height: 60px; line-height: 68px; }
+.path-nav .path-nav-close { z-index: 2; position: absolute; top: 0; left: 0; background: none; -moz-box-shadow: 0; -webkit-box-shadow: 0; -o-box-shadow: 0; box-shadow: 0;}
+.path-nav:target .path-nav-expander { z-index: 1; }
+
+/*=================TOP RIGHT SUB_MENU ends here===========================================*/
+
+
+
+
+
+/*==============FIND EVENTS starts here=====================================*/
+    .flex-container { display: -webkit-flex; display: flex; -webkit-justify-content: center; justify-content: center; width: 100%; padding:10px; }
+    /*.isInterExplorer{margin-left:-30px !important;}*/
+    .Envelope_prev{ margin-top: 2px; margin-bottom: 2px; font-family: Arial, sans-serif; width: 100%; padding: 2px; padding-bottom: 2px; color: #777; z-index:0; }
+    .Envelope_prev > section{background: white; width: 100%; padding: 2px;padding-bottom: 10px !important;}
+    .PostedBy > img{float: left;margin-left: -5px;}
+    .PostedBy p{font-size: .7em; line-height: 1.1; margin-left:20px !important;}
+    .PostedBy a{font-size: 1.1em; font-weight: bold; color: #615998; margin-left:10px !important;}
+    .MyRating{font-size: .7em; clear: left; float: left;  margin-left:10px; padding: 2px 0 2px 0;}
+    .NumbView{font-size: .7em; float: right; margin-right:0px; padding: 2px 2px 2px 0; }
+
+    .Title_prev{font-size: .9em; font-weight: bold; color: #000; margin: 5px 0 0 5px; overflow:hidden; text-overflow:clip; }
+    .details_prev{ font-size: .9em; color: #758FDC; margin: 5px 0 0 5px; overflow:hidden; text-overflow:clip; }
+    .Date_prev{font-size: 30px; color: #ec1c2b; } /*color: #000;*/
+    .Date_prev span{ font-size: 18px;color: #000;margin-top:-20px !important}
+    .Time_prev{width:100%; font-size: .7em; margin: 0 auto }
+    .Address_prev{margin: 0 auto, word-wrap: break-word;overflow:hidden; text-overflow:clip}
+
+    .NumbInterest_prev{ font-size: .7em; }
+    .ImInterested_prev{ background: #333333; font-size: .7em; color: #FFFFFF; width: 120px; height: 30px; border:1px solid #e9eaed;}
+    .ImInterested_prev:hover{opacity:0.5;}
+    /*a#prev-snapmap-events { height: 100vh; overflow: scroll; margin: 0 auto; width: 100%; max-height: 1200px;padding: 0;}*/
+
+/*===================-FIND EVENTS ends here==============================*/
+
+
+
+/*=========================POST/CREATE EVENTS starts here==========================*/
+    .view span {font-size: 16px;}
+    .view span.glyphicon {font-size: 20px;margin-top: 5px;}
+    .well{padding:10px !important; padding-top:0px !important; padding-bottom:0px !important; width:275px;}
+    .well hr {margin-top: 1px; margin-bottom: 1px; border: 0; border-top: 1px solid #dedede; width: 275px; }
+    .pull_button{margin-right:12px;}
+    .profile_box{ position:relative; float:left; min-width:275px; }
+    .profile_box h2{ float: left; font-weight: normal; font-size: 14px !important; text-transform: capitalize !important; margin: 0px; padding: 0px; position: absolute; top: 18px; left: 70px;}
+    .profile_box img{width:60px; float:left;padding-left:5px; }
+    .view_box{ margin-left: 70%; margin-top:18px; } /*float; right*/
+    .border_class {border-bottom: 1px solid rgb(229, 229, 229); padding-bottom: 10px; padding-top: 10px; padding-left: 0px; }
+    .media-left a i {color: rgb(118, 118, 118);}
+    .media-left span:hover{cursor:pointer;}
+    .video_container{margin-top: 10px; margin-bottom:10px; }
+
+    /*Drag and Drop CSS*/
+    #upload_zone{padding: 15px 20px 5px;}
+    .url-upload {padding-top: 20px;}
+    .url-text {padding: 6px; float:left; width: 90%; }
+    .upload_button {float: left; border: 1px solid #666666; padding: 6px 10px; background:#568203; border-left: 0px solid #fff; cursor:pointer; position:absolute; }
+    .url-btn {float: right;}
+
+    .form_title, .form_description, .form_date_1, .form_date_2, .form_time_1, .form_time_2, .form_street, .form_place, .descriptags, .tags_description{font-size: 10px; width: 92%; height: 50px; margin: 0 0 5px 0; padding: 2.5px 5px;border: 0px; background:#D3D3D3 !important}
+    .form_title, .form_description, .form_street, .form_place, .descriptags, .tags_description{width: 100%;}
+    .form_date_1, .form_date_2, .form_time_1, .form_time_2{width: calc(50% - 2.5px);}
+    .form_description, .form_date_2, .form_time_2, .form_place, .tags_description{ display: none; }
+    .form_description_add, .form_date_add, .form_time_add, .form_place_add, .tags_description_add{width: 14px!important; cursor: pointer; }
+    .full_width{width: 100% !important;}
+    .form_description, .tags_description{height:150px;}
+/*======================POST/CREATE EVENTS ends here====================================*/
+
+
+
+
+
+#map-satellite { width: 80px; height: 80px; margin: 0px; margin-bottom: -30px; border: thin solid; border-color: white; }
+.panel-body .gmarkers { margin: 0 0 0 10px; font-family: roboto; }
+.panel-body { border-top: 0; border-top-color: #000 !important; font-size:17px; color: #333333 !important }
+.panel-body:hover { background: #4F4F2F!important; color: #fff !important }
+
+input[type="checkbox"], input[type="radio"] {margin: 4px 8px 0 0;}
+
+.gm-style {font-family: citrixsans-regular, Helvetica, sans-serif !important;}
+.gm-fullscreen-control {display: none;/*remove  fulscreen icon on google map  street view*/}
+/*.gm-style > div:nth-child(10){display:none;} same as above*/
+.gm-svpc {/* style the yellow pegman street view*/
+  background:#F8F8FF !important; display:none ;   border: 1px solid black; 
+  margin-top:-80px;margin-left:-12px;padding:17px !important; border-radius: 25px !important;
+}
+.gm-svpc:hover{background:#8DB600 !important;}
+.zoom-mylocation2 {position:absolute; margin-left:-40px !important; margin-top:50px !important;}
+.zoom-mylocation {display:none;}
+.zoom-mylocation a{ text-align: center;float: left; width: 36px;height: 36px;border: 1px solid black; background:#F8F8FF; border-radius: 100%;margin-right: 7px; /*space between*/} 
+.zoom-mylocation a i{font-size: 30px;line-height: 34px;color: #292421;}
+.zoom-mylocation  a :hover{color: #8DB600;}
+.mobileCompressZoom{display:none};
+
+
+.controls {
+    padding: 6px;
+    z-index: 105;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 50% outline: none;
+}
+
+#type-selector {
+    color: #fff;
+    background-color: #4d90fe;
+    padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+
+
+.ccccc {
+    margin-left: 1px;
+    padding-top: 13px;padding-bottom: 13px;
+    border-bottom: 1px solid #80804c;
+}
+
+
+.subfold_who { padding: 20px 100px 12px 2px }
+.subfold_where{padding: 20px 110px 12px 2px;}
+.subfold_active {padding: 20px  35px 12px 2px;}
+.subfold_give {padding: 20px 45px 12px 2px;}
+
+.subfold-login {padding: 30px 160px 30px 2px;}
+.subfold-logout {padding: 30px 147px 30px 2px;}
+
+.subfold-showup {color: white; padding: 35px 45px 57px 5px;}
+.mypages{padding: 10px 125px 10px 20px;margin-left:0px !important;}
+.addfunds{padding: 30px 165px 30px 20px;margin-left:0px !important;}
+.reservation{padding: 30px 120px 30px 20px;margin-left:0px !important;}
+.account-history{padding: 30px 160px 30px 20px;margin-left:0px !important;}
+
+.subfold-fb {   margin-left:-50px !important; padding: 30px 40px 30px 70px !important}
+.subfold-eb {   margin-left:-50px !important; padding: 30px 32px 30px 70px;}
+.subfold-meetup{margin-left:-50px !important; padding: 30px 68px 30px 70px;}
+.subfold-yelp { margin-left:-50px !important; padding: 30px 112px 30px 70px;}
+
+
+.rightMargin35 { margin-right: 35px }
+.topMargin15 { margin-top: 15px }
+.fontSize20 {color: black; font-size: 20px }
+
+
+
+
+body > .container-fluid:first-child { height: auto !important;z-index:99 !important; }
+.mnavaa {overflow-y: scroll; z-index: 9999; height: calc(100% - 90px); width: 100%; /*max-height: 100%;*/ overflow-y: auto; overflow-x: visible;  background:#fff !important; }
+.menu-shadow{margin-left:-5px; background:#fff !important;
+    -webkit-box-shadow: -5px 0 5px -5px black, 5px 0 5px -5px black !important;
+   -moz-box-shadow:-5px 0 5px -5px black, 5px 0 5px -5px black !important;
+  box-shadow:-5px 0 5px -5px black, 5px 0 5px -5px black !important;
+}
+
+
+span.mainlistz { max-height: 1200px; display: block; overflow: auto; }
+span.mainlistz li:last-child a { margin: 0 auto; padding-right: 0; }
+img.sidebar_logo { max-width: 90px; }
+
+
+
+.panel-body {font-size: 16px; padding: 20px 5px 20px 5px; border-bottom: 0.1px solid rgba(255, 255, 255, 0.4);}
+.pac-input {border: 2px solid #878681; /*left: 73px !important; top: 120px !important;*/ }
+
+#radius-input { position: absolute; top: 20px !important; width: 297px; margin-left: 200px; z-index: 99999; background: #568203;  display: none }
+#radiusValue {width: 147px; }
+
+#enter-nextSearch {position: absolute; top: 65px; margin-left: 530px; padding-top: 3px; float:right; cursor: pointer; z-index: 1; color: #568203; }
+#enter-nextSearch:hover {color: #355427; }
+
+#enter-nextSearch{ margin-top: 45px; left: 131px !important;}
+.yyyy:hover #enter-nextSearch{left: 200px !important;}
+#radius-input {top:70px !important; margin-left: -72px;}
+
+span#postNextEvent {left: 200px;}
+
+/*@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");*/
+.container-search {overflow: hidden; width: 100%; vertical-align: middle; white-space: nowrap; }
+
+/*Below the input doesn’t have the transition because it’s not the element being affected this time around.*/
+.container-search input#search {width: 100%; height: 40px; float: left; padding-left: 15px; padding-right: 50px; background: #414F12; border: none; font-size: 12pt; }
+
+/*The snippet to recolor the placeholders*/
+.container-search input#search::-webkit-input-placeholder {color: #FFA;}
+.container-search input#search:-moz-placeholder { /* Firefox 18- */ color: #FFA; }
+.container-search input#search::-moz-placeholder { /* Firefox 19+ */ color: #FFA; }
+.container-search input#search:-ms-input-placeholder { color: #FFA; }
+
+/*the code to style the button that appears on hover.*/
+.container-search i.icona {
+    -webkit-border-top-right-radius: 5px; -webkit-border-bottom-right-radius: 5px; -moz-border-radius-topright: 5px; moz-border-radius-bottomright: 5px;
+    border-top-right-radius: 5px; border-bottom-right-radius: 5px;  
+    height: 40px; width: 50px;border: none; background: #568203; color: #4f5b66; opacity: 0; font-size: 10pt;
+    -webkit-transition: all .55s ease; -moz-transition: all .55s ease; -ms-transition: all .55s ease; -o-transition: all .55s ease; transition: all .55s ease;
+}
+
+/*Adding the Hover Effects*/
+.container-search:hover i.icona, .container-search:active i.icona, .container-search:focus i.icona {outline: none; opacity: 1; margin-left: -50px; cursor: pointer; }
+.container-search:hover i.icona:hover { background: #003300; }
+
+input[type="checkbox"] {display: none;}
+input[type="checkbox"], input[type="radio"] {vertical-align: middle;}
+input[type="checkbox"] + label, input[type="radio"] + label { cursor: pointer; }
+
+input[type="checkbox"] + label:before,
+input[type="radio"] + label:before {content: ""; display: inline-block; height: 19px; width: 19px; margin: 1px 4px 0 -22px; vertical-align: middle;  }
+
+input[type="checkbox"] + label:before {background: url(http://d3pr5r64n04s3o.cloudfront.net/tuts/391_checkboxes/check_radio_sheet.png)left top no-repeat;}
+input[type="checkbox"]:checked + label:before {background: url(http://d3pr5r64n04s3o.cloudfront.net/tuts/391_checkboxes/check_radio_sheet.png)-19px top no-repeat;}
+input[type="radio"] + label:before {background: url(http://d3pr5r64n04s3o.cloudfront.net/tuts/391_checkboxes/check_radio_sheet.png)-38px top no-repeat;}
+input[type="radio"]:checked + label:before {background: url(http://d3pr5r64n04s3o.cloudfront.net/tuts/391_checkboxes/check_radio_sheet.png)-57px top no-repeat;}
+
+.btn-route {height: 40px !important; width: 48px !important;padding: 10px !important;
+    border-top-left-radius: 0px; border-top-right-radius: 0px; background: #fff; color: #568203; border-color: #568203;
+}
+.btn-route:hover {background-color: #e0e0e0;}
+.rotate_90deg {padding: 5px; color: black; -webkit-transform: rotate(90deg); -moz-transform: rotate(90deg); -o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(90deg);}
+
+.route-input1 {
+    height: 35px !important; width: 212px !important; margin-left: -48px !important;
+    padding-left: 60px; padding-right: 10px; padding-bottom: 4px; background: #fff;
+}
+
+.route-input2 {
+    height: 35px !important; width: 212px !important; margin-left: -48px !important;
+    padding-left: 40px; padding-right: 10px; padding-bottom: 4px; background: #fff;
+}
+
+.fromTo {
+    height: 35px !important; width: 10px !important; margin-left: -1px !important;
+    padding-left: 10px; padding-right: 10px; padding-bottom: 4px;
+}
+
+.leftMargin4 { margin-left: 4px !important; }
+.leftMargin52 { margin-left: 52px !important; }
+.leftMargin100 { margin-left: 100px !important; }
+.leftMargin148 { margin-left: 148px !important; }
+.leftMargin196 { margin-left: 196px !important; }
+
+.topMargin-165 { margin-top: -165px; }
+.topMargin-130 { margin-top: -130px; }
+.topMargin-95 { margin-top: -95px; }
+.topMargin-60 { margin-top: -60px; }
+.topMargin-20 { margin-top: -20px; }
+.topMargin-53 { margin-top: -27px }
+.topMargin-2 { margin-top: -2px;}
+.topMargin8 {margin-top: 8px !important;}
+
+.floatLeft {float: left;}
+.leftMargin40{margin-left:40px !important}
+.leftMargin-2 {margin-left: -2px;}
+.leftMargin-5 {margin-left: -5px;}
+.leftMargin4 {margin-left: 4px;}
+.leftMargin52 {margin-left: 52px}
+
+.hidexflow {overflow: hidden !important;}
+.fontSize18 {font-size: 18px !important;}
+.gray-color {color: #333333 !important}
+.postEvent-popup {float: left; margin-top: -10px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 11px; background-color: #568203; color: #FFF; font-size: 25px; }
+.post2Event_popup{ float: center; position: fixed; background-color: #FFF; border: 2px solid #568203; border-radius: 3px; background-position: left -3px top -3px; width: 280px; height: 50px; z-index: 11; padding-top: 10px; padding-bottom: 10px; font-size: 25px; }
+
+

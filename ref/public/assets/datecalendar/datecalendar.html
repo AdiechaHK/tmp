@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="../../assets/datecalendar/component1.css">
+
+        <link rel="stylesheet" type="text/css" href="../../libs/jquery/jquery-ui-v1.11.4/jquery-ui.min.css">
+        <link rel="stylesheet" type="text/css" href="../../libs/jquery/jquery-ui-v1.11.4/jquery-ui.structure.min.css">
+        <link rel="stylesheet" type="text/css" href="../../libs/jquery/jquery-ui-v1.11.4/jquery-ui.theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../assets/datecalendar/pepper-ginder-custom.css">
+
+        <link rel="stylesheet" type="text/css" href="../../libs/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        
+        <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">-->
+
+        <link rel="stylesheet" type="text/css" href="../../assets/datecalendar/style-date-time.css">    
+
+        
+    </head>
+    <body>
+    	<!--<header class="text-center header">
+			Dates & Time
+		</header>-->
+
+    	<div class="container" id="tab1" >
+    		<div class="row">
+	    		<div class="col-lg-12" id="cn-container">
+	    			<button class="cn-button" id="cn-button1">
+                        <i class='icon-time' ></i>
+                    </button>
+					<div class="cn-wrapper" id="cn-wrapper1">
+						<ul>
+							<li id="evenings">
+                                <a href="#">
+                                    <i class="fa fa-sun-o"></i>
+                                    <div>Evenings</div>
+                                </a>
+                            </li>
+							<li id="afternoons">
+                                <a href="#">
+                                    <i class="fa fa-sun-o"></i>
+                                    <div>Afternoons</div>
+                                </a>
+                            </li>
+							<li id="noons">
+                                <a href="#">
+                                    <i class="fa fa-sun-o"></i>
+                                    <div>Noons</div>
+                                </a>
+                            </li>
+							<li id="mornings">
+                                <a href="#">
+                                    <i class="fa fa-sun-o"></i>
+                                    <div>Mornings</div>
+                                </a>
+                            </li>
+							<li id="dawns">
+                                <a href="#">
+                                    <i class="fa fa-sun-o"></i>
+                                    <div>Dawns</div>
+                                </a>
+                            </li>
+						</ul>
+					</div>
+	    		</div>
+
+                <div class="col-lg-12 cn-lower-container">
+                    <div id="cn-lower-desc">
+                        <i class="fa fa-star time-icon"></i>
+                        Night
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+	    		<div class="col-lg-12" id="calendar-container">
+                    
+	    			<div id="calendar1" class="calendar"  >
+                        <div class="all-select" id="left-all-select">
+                            <a href="#" id="all-row-1">All</a>
+                            <a href="#" id="all-row-2">All</a>
+                            <a href="#" id="all-row-3">All</a>
+                            <a href="#" id="all-row-4">All</a>
+                            <a href="#" id="all-row-5">All</a>
+                        </div>
+
+                        <div class="all-select" id="right-all-select">
+                            <a href="#" id="wd-row-1">Wd</a>
+                            <a href="#" id="wd-row-2">Wd</a>
+                            <a href="#" id="wd-row-3">Wd</a>
+                            <a href="#" id="wd-row-4">Wd</a>
+                            <a href="#" id="wd-row-5">Wd</a>
+                        </div>
+
+                         <div class="all-select" id="bottom-all-select">
+                            <a href="#" id="all-col-1">All</a>
+                            <a href="#" id="all-col-2">All</a>
+                            <a href="#" id="all-col-3">All</a>
+                            <a href="#" id="all-col-4">All</a>
+                            <a href="#" id="all-col-5">All</a>
+                            <a href="#" id="all-col-6">All</a>
+                            <a href="#" id="all-col-7">All</a>
+                        </div>
+                    </div>
+                    
+	    		</div>
+	    	</div>
+    	</div>        
+
+    	
+
+      
+
+    	<script type="text/javascript" src="../../libs/jquery/jQuery-v2.1.4-min.js"></script>
+        <script type="text/javascript" src="../../libs/jquery/jquery-ui-v1.11.4/jquery-ui.min.js"></script>
+
+        <!-- loads mdp -->
+        <script type="text/javascript" src="../../libs/jquery/jquery-ui-v1.11.4/jquery-ui.multidatespicker.js"></script>
+
+        
+        <script type="text/javascript" src="../../assets/datecalendar/polyfills.js"></script>
+        <script type="text/javascript" src="../../assets/datecalendar/scripts.js"></script>
+        <script type="text/javascript" src="../../libs/modernizr/modernizr-2.6.2.min.js"></script>
+
+    	<script type="text/javascript">
+            $(function(){
+            
+            });
+
+    		$('#calendar1').multiDatesPicker({
+                mode: 'daysRange',
+    autoselectRange: [1,3]
+            });
+    	</script>
+
+    </body>
+</html>

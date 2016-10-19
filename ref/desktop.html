@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta content='True' name='HandheldFriendly'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> 
+    <title>Mapcoming</title>
+    <meta name="description" content="Connecting Wishes to events : Can you move backor go forth in time with googlemaps. Maparise promises more than that. Maparise Uses google maps to share whats happening / arising in your sorrounding or give your upcoming event a local neighbourhood exposure. We turn  just maps into past current and upcoming events" />
+    <meta name="keywords" content="Mapcoming Maparise Showup Events Wish Pool" />
+    <meta name="author" content="Mapcoming info@mapcoming.com" />
+    <!--<link rel="shortcut icon" href="public/images/favicon.ico">-->
+    <link rel="icon" type="image/png" href="public/images/favicon.png">
+    <!--<script src="js/modernizr.custom.js"></script>-->
+    <!-- Latest compiled and minified CSS -->
+  
+
+
+    <link rel=" stylesheet" type="text/css" href="public/libs/bootstrap/bootstrap.min.css" >
+
+    <!--<link rel=" stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
+
+    <!-- Optional theme -->
+    <link rel=" stylesheet" type="text/css" href="public/libs/bootstrap/bootstrap-theme.min.css" >
+    <!--<link rel=" stylesheet" type="text/css" href="public/libs/bootstrap/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">-->
+ 
+    <!--styles that came with multipush menu template + my styles-->
+    <link rel=" stylesheet" type="text/css" href="public/styles/desktop-style/mystyle-additional.css">  
+    <!--<link rel=" stylesheet" type="text/css" href="public/styles/desktop-style/MAP-stylebak.css" />-->
+    <link rel=" stylesheet" type="text/css" href="public/assets/other_assets/Radio-Button-Based-Dropdown-Select.css"\>
+    <!--<link rel=" stylesheet" type="text/css" href="public/styles/component.css" />-->
+    <!--<link rel=" stylesheet" type="text/css" href="public/styles/styles4Maparise/SNAPMAP-component.css" />-->
+
+    <link rel=" stylesheet" type="text/css" href="public/styles/desktop-style/main-plugin-multilevel-pushmenu.css">
+    
+    <!--<link rel=" stylesheet" type="text/css" href="public/styles/desktop-style/MAP-main_style.css">--><!--place SNAPMAP-main_snapmap_style.css below  SNAPMAP-component.css to avoid conflicts" />-->
+    <!--<link rel=" stylesheet" type="text/css" href="public/styles/desktop-style/MAP-desktop-style.css">-->
+
+    
+    <!--<link rel=" stylesheet" type="text/css" href="public/styles/desktop-style/MAP-find-post-events.css">-->
+    
+    <!--<link rel=" stylesheet" type="text/css" href="public/styles/styles4snapmap/SNAPMAP-events-form.css">-->
+
+    <link rel=" stylesheet" type="text/css" href="public/fonts/font-awesome-4.6.3/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
+
+
+    <!--<link rel=" stylesheet" type="text/css" href="public/styles/desktop-style/MAP-mystyle.css">-->
+
+
+    <!--<link rel=" stylesheet" type="text/css" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">-->
+    
+    <link rel=" stylesheet" type="text/css" href="public/libs/jquery/jquery-ui-v1.11.4/jquery-ui.theme.min.css">
+
+    <link rel=" stylesheet" type="text/css" href="public/libs/jquery/jquery-ui-v1.11.4/jquery-ui.min.css">
+
+    <!-- Optional theme --> 
+   <!--<link rel=" stylesheet" type="text/css" href="malihu-custome-scrollbar-plugin-master/malihu-custome-scrollbar-plugin-master/jquery.mCustomScrollbar.css">-->
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+
+
+
+</head>
+<body>
+    
+  <!-- use the font -->
+  <style>
+    body { font-family: 'Roboto'; font-size: 18px;  font-weight:normal; color:#555555; }
+  
+
+
+.postedTable{width: 250px;padding:0px;}
+.postedTableCell{display: inline-block;padding:0px;margin-top:0px;padding:0px 0px 10px 0px}
+.hideTOverflow, .hideTOverflow span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;} 
+hr.scissors-DottedLine {border-top: 2px dashed #3B5323;} 
+hr.scissors-DottedLine:after {
+  content: '\002702'; display: inline-block;  position: relative;  top: -10px; left: 40px; 
+  padding: 0 3px; color: black; font-size: 18px; 
+}
+
+
+
+
+.styled-select  {
+   width: 225px; height: 50px; margin-left:0px; overflow: hidden; font-size: 24px; line-height: 1; padding: 10px; border: 0; 
+   border-radius: 0; font-size:24px; -webkit-appearance: none; cursor:pointer; border: 1px solid #ccc;   
+   background: url(public/images/additional/icon-calendar-gray.png) no-repeat left #F8F8FF; /*background-size: contain; background-repeat: no-repeat;*/   
+}
+#select-eventCat-1{height:40px; padding:10px;font-size:24px}
+#select-wishCat-1{height:40px; padding:10px; font-size:24px;}
+#select-eventCat-2{height:40px; padding:10px;font-size:24px}
+#select-wishCat-2{height:40px; padding:10px; font-size:24px;}
+
+
+.lightFont { transform: scale(0.6,1);font-size:30px ; color:#8B814C ;}
+.filtersByNext{
+    margin-top:50px; height:50px; width:300px; display: inline-block; padding:15px 35px 13px 35px ; 
+    background:#3B5323;color:#fff; font-size:20px;
+  }
+
+.filtersByNext div { display: inline-block; }
+.font-engravedInset{font-size: 25px; font-weight:bold; color: rgba(255,255,255,0.4) ; text-shadow: 1px 2px 3px #eee, 0 0 0 #000, 1px 2px 32px #eee; } /*text-shadow: 0px 1px 2px #eee, 0 0 0 #000, 0px 1px 2px #eee;*/
+
+
+
+
+/*====================HEADER NAVIGATON MENU starts here =============================http://tympanus.net/codrops/2010/04/30/rocking-and-rolling-rounded-menu-mainNav-with-jquery/ */
+    .menu-mainNav{margin-top:-30px !important}
+    .logotext { color: rgba(0,0,0,0.6); padding:10px 10px 10px 25px;
+        font-size: 45px; text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+    }
+
+    @media (max-width: 450px) {.logotext{font-size: 35px;padding-left:20px;} .menu-mainNav{margin-top:-30px !important}}
+    /*@media (max-width: 769px){.logotext{font-size: 40px !important; padding-left:40px !important;}  }*/
+
+/*====================HEADER NAVIGATON MENU ends here =============================*/
+
+
+
+/*========Start style ADDRESS INPUT =========================*/ 
+        #enter-nextSearch{position:absolute;right:10px; top:10px;z-index:999;}
+
+        .address-input {
+            position: absolute; top:63px !important; right:15px; background:white;border: 1px solid #DCDCDC;
+            overflow:visible; padding-left:10px;  padding-right:10px; z-index: 2 !important; 
+          }
+
+        #address-input {height:36px;  font-size:14px;border-style:none; -webkit-transition: all .5s ease; -moz-transition: all .5s ease; transition: all .5s ease; }
+        
+        .icon_addressInput{display:none;}
+
+        @media (min-width: 990px){.address-input{right:40px;} #address-input{width: 230px; } #address-input:hover, #address-input:focus {width: 300px;}}
+
+        @media (min-width: 599px)  and (max-width: 990px){#address-input{width: 230px; } #address-input:hover,#address-input:focus {width: 300px;}}   
+
+        @media (max-width: 599px) {#address-input{width: 170px; background:white;}  #address-input{width: 140px;} #address-input:hover,#address-input:focus {width: 240px;}}
+/*========End style ADDRESS INPUT =========================*/  
+
+
+
+/* Start style FOR WHO, WHERE, ACTIVE LIFE, GIVING =================== */                               
+        .custome-icon {
+            width:30px; height:40px; background:#666; background:rgba(0,0,0,0.6); -webkit-border-radius:1100%; -moz-border-radius:100%; -o-border-radius:100%; border-radius:100%;
+            border:6px solid #fff; color:#fff; box-shadow: 0 1px 10px rgba(0, 0, 0, 0.46); font-size:40px; text-align:left !important;
+            display:table-cell; vertical-align:middle; -moz-transition:.5s; -webkit-transition:.5s; -o-transition:.5s; transition:.5s;
+          }
+        .custome-icon1{padding:10px}
+        .custome-icon1:hover{padding:20px}
+        .custome-icon2{padding:10px 20px 10px 20px;}
+        .custome-icon2:hover{padding:20px 30px 20px 30px;}
+        .custome-icon3 {font-size:120px  !important; padding:40px !important; }
+        .custome-icon3:hover {font-size:110px  !important;}
+        .custome-icon:hover { background:rgba(0,0,0,0.2);}
+        .fix-editor {display:none;}
+        .icon-wrapper {display:inline-block;}
+
+        .cluster-table {display:table;border-collapse:separate;border-spacing:1px;width:110%; margin-top:30px;}
+        .cluster-table-row {display:table-row;}
+        .cluster-table-cell {display:table-cell;padding:5px 8px 5px 8px;max-width:100%;border:0px solid black; }
+
+        .list4whoETC{margin-top:10px;overflow:hidden; background:#fff}
+/* End style FOR WHO, WHERE, ACTIVE LIFE, GIVING =================== */
+        
+        
+          .gmarkers{padding: 7px 0 7px 0;}
+          .padCheckbox{padding-left:10px}
+          .leftMargin40{margin-left:40px !important} 
+          .leftMargin10{margin-top:-10px; margin-left:10px !important} 
+          .effect1{width:90%; height:370px; background:#FFF; margin:40px auto; padding:20px; -moz-box-shadow:    3px 3px 5px 6px #ccc; -webkit-box-shadow: 3px 3px 5px 6px #ccc; box-shadow: 3px 3px 5px 6px #ccc;}
+
+ /*===================Begining of INTRODUCTION VIDEO ================================*/
+          #headerID{display:block; position:absolute;bottom:40px; left:0px; margin-left:-15px;cursor: pointer; }
+          .watch{height: 45px;background:#7F9A65; margin-top:11px;    color: #fff; font-size: 17px;}
+          .close {position: absolute; z-index: 1; right: 7%; top: 25%; }
+          .codegena{z-index:2; position:absolute;top:45px; width:100%;height:0; padding-bottom:190px;margin: 0 auto;background:#fff}
+          .codegena iframe{width:90%;height:190px; display: block; margin: 0 auto;}
+          .play-video {width:260px; height: 55px;background:#7F9A65; display: inline-block; padding-right:10px; padding-left: 10px; font-size:1.2em; color: #fff; margin-top:10px;padding-bottom:10px; border-radius:0px;  }
+          .media-popup {position:fixed; top:10px; left:0px; width:100%; height:100%; background:rgba(0,0,0,0.75); z-index:9;}
+          .form-control play-video{height: 45px;background:#7F9A65}
+          #codegena{display:none; background:#fff;}
+          .vidInner-container>img{height:2.0em; margin-top:0px;  background:#7F9A65}
+  /*===================End INTRODUCTION VIDEO================================*/
+
+
+  /*=============Begining CN_MP-MENU=============*/
+          .fa-mypages{margin-left: -5px !important; font-size:25px !important}
+          .fa-mypages i{ margin-right:-20px !important; float:right;  font-size:32px;}
+  /*===============End CN_MP-MENU*/
+
+  /*============== Begin MAP*/
+          .btn-closeStreetView { margin-top: 50px; margin-right: 10px; cursor: pointer; }
+          #map-canvas{margin-top:-135px ;height:100%  }
+  /*End MAP*/
+     
+          .popup_infobox {  
+              margin-top: 8px; padding: .5em 1em; border:2px solid black; background:#098; color:#FFF; font-family:Arial, Helvetica, sans-serif;  font-size:12px;  
+              -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; text-shadow:0 -1px #000000; -webkit-box-shadow: 0 0  8px #000; box-shadow: 0 0 8px #000; 
+            }
+
+/*=============start MAP MARKER POPUP============================================*/
+          .show_ourEvents_only, .show_externalEvents_only {display:none;}
+          .meetUpCheckboxControlBox {z-index: 99; }
+
+          /*Styles for Facebook checkbox*/
+          .yelpCheckboxControlBox {z-index: 99; }
+
+          .referenceCheckbox_internal, .referenceCheckbox_external{ 
+              position: absolute; bottom: 10px !important; left: 10px !important; width: 70px; z-index: 99; 
+              margin:2px; background:#fff; border:1px solid #000; padding:4px; text-align:center;    
+            }
+
+          .switch {/* The switch - the box around the slider */ position: relative; width: 30px; height: 17px; margin: 5px; display: block; text-align: center; }
+          .switch input {/* Hide default HTML checkbox */display:none;}
+          .slider {/* The slider */ position: absolute; top: 0; left: 0; right: 0; bottom: 0; cursor: pointer; background-color: #ccc; -webkit-transition: .4s; transition: .4s;}
+
+          .slider:before {position: absolute; content: ""; height: 11px; width: 11px; left: 4px; bottom: 3px; background-color: white; -webkit-transition: .4s; transition: .4s; }
+
+          input:checked + .slider {background-color: #2196F3;}
+          input:focus + .slider {box-shadow: 0 0 1px #2196F3;}
+          input:checked + .slider:before {-webkit-transform: translateX(13px); -ms-transform: translateX(13px); transform: translateX(13px);}
+
+          .slider.round {/* Rounded sliders */border-radius: 17px;}
+          .slider.round:before {border-radius: 20%; }  
+/*=============end MAP MARKER POPUP============================================*/
+
+
+  
+/*========== Begin FLTERS: Time, Place, Sort, Route ========================*/              
+            /*http://www.jqueryscript.net/menu/Windows-10-Style-Animated-dropdownFilter-Box-with-jQuery-CSS3.html*/
+            .slideWindow{ position: absolute; top: 0px; left: 0px; height:100%; width:300px; z-index:3; background:#fff; display:none; overflow:hidden}
+            .slideWindow:hover{ overflow-y:auto}
+            #filter_eventsBY{opacity:0; }
+            #filter_eventsBY>.slideWindow{visibility: visible;}            
+            
+            .child-filter_eventsBY{padding:7px 19px 8px 19px; opacity:1; z-index:3;background:gray; -webkit-transition: all .5s ease; -moz-transition: all 1s ease; transition: all .5s ease;}
+            .child-filter_eventsBY:hover{background:#414F12 !important; opacity:1;}
+            #filter_eventsBY{ position: absolute; top: 65px; margin-left:15px; width:260px; height:35px; padding-left:10px; background:#fff ; overflow:hidden; display:none;  z-index: 3;cursor:pointer;}
+            #filter_eventsBY:hover{opacity:1; background: gray;}  
+
+            .tableDIV { margin-left:-10px; display: table; width:100%}
+            .rowTable { display: table-row; }
+            .cellTable { display: table-cell; } 
+
+
+
+            .trtd_bar0{height:10px;}  .trtd_bar1{height:20px; } 
+            .trtd_bar2{height:30px;}  .trtd_bar3{height:40px;} 
+            .activeClr-bars{margin:2px; background:#3B5323;} 
+            .inactiveClr-bars{margin:2px;background:gray;}
+            .cellClass {vertical-align:bottom !important;width:20px; cursor:pointer;};
+
+
+
+            .pollSlider{
+                height:200px;   background:#3B5323; width:255px; margin-left:-245px;  margin-top:50px;
+                border-radius: 20px 0px 20px 0px; border: 1px solid #CCC;
+            }
+            #pollSlider-button{
+                width:30px; height:40px; margin-left:35px; padding-top:5px;
+                cursor:pointer; background:#3B5323; border-radius: 0px 5px 5px 0px;
+            }
+            #trigger-pollSlider-button{width:30px; height:30px;  margin-left:235px;top:5px;  display:none; cursor:pointer; }
+
+           .isInterExplorer{margin-left:-30px !important;}
+  /*========== End FLTERS: Time, Place, Sort, Route ========================*/  
+</style>
+
+
+
+    <div class="container-fluid" id="mainmmi1" style="margin:0px; padding:0px;height:68px !important; z-index:4; ">
+    <!--<div class="container-fluid" id="mainmmi1" style="margin:0px; padding:0px;height:68px !important; z-index:4; background:#fff; border-bottom:2px solid gray;">-->
+    <!--background-color:#568203 !important;-->
+        <!--container -->
+
+         
+        <a href="#" class="" style="height:50px!important;">
+            <!--<img  src="public/images/maparise_nametag21.png">-->  
+            <span class="logotext  logoNameSize1" onclick="refreshMap()" style="  font-weight: bold">Mapcoming</span>
+        </a>
+  
+
+ <!--//http://tympanus.net/codrops/2010/04/30/rocking-and-rolling-rounded-menu-with-jquery/
+ http://tympanus.net/Tutorials/RockingRollingMenu/-->
+        <div  class="" style="">
+            <div class="menu-mainNav"   id="our-portfolio" onclick="FXN_ourPortfolio_menu()" >
+                <a href="#" class="menu-link icon_home">
+                    <div class="menu-mainNav_content"><h2>Portfolio</h2></div>
+                </a>
+            </div> 
+            <div class="menu-mainNav postIIevent_popup"  id="cameratop" onclick="FXN_post_events_menu2()">
+                <a href="#" class="menu-link icon_photos" >
+                    <div class="menu-mainNav_content"><h2>Post</h2></div>
+                </a>
+            </div>
+            <div class="menu-mainNav " id="find-events-menu" onclick="FXN_find_events_menu()" >
+                <a href="#" class="menu-link icon_find" >
+                    <div class="menu-mainNav_content "><h2>Find</h2></div>
+                </a>
+            </div>
+        </div> 
+        <div class="clearfix"></div>
+        <div id="cameratop-div"></div>
+    <!-- mp-menu myspace-inner-1-->
+    </div>
+<!--container end -->
+
+
+
+<!-- content to be placed inside <body>…</body> -->
+    <a class='btn-myspace footer-myspace' href='#' tabindex='1'><i class="fa fa-user"></i></a>
+    <ul class='myspace-outer footer-myspace' id="myspace-outer">
+        <li class='myspace-inner'><a href='#' id="myspace-inner-1-trigger"><i class="fa fa-user"></i></a></li>
+        <li class='myspace-inner'><a href='#' id="myspace-inner-2-trigger"><i class="fa fa-star"></i></a></li>
+        <li class='myspace-inner'><a href='#' id="myspace-inner-3-trigger"><i class="fa fa-calendar-plus-o"></i></a></li>
+        <li class='myspace-inner'><a href='#' id="myspace-inner-4-trigger"><i class="fa fa-bullhorn"></i></a></li>
+        <li class='myspace-inner'><a href='#' id="myspace-inner-5-trigger"><i class="fa fa-share-alt"></i></a></li>
+    </ul>
+
+<!-- Start Nav Structure -->
+<!--<div id="main-cn-overlay" class="main-cn-overlay"></div>-->
+ <!-- End Nav Structure -->   
+    <div class="container-fluid" style="margin:0px;padding:0px; margin-top:-68px;">   <!-- container 1-->  
+       <form class="address-input" >                    
+          <input id="address-input" class="ddd" type="text" placeholder=" Enter a location"  onfocus="focusinFunction()" onblur="focusoutFunction()">
+              <a href="#" type="button" class="hhh" id="enter-nextSearch" onclick="FXN_show_input_radius()" >
+                  <i class="icon_addressInput fa fa-arrow-right"></i>
+              </a> 
+          </input>
+          <div class="controlsw pac-inputw" id="radius-input" >
+              <input type="text" id="radiusValue" placeholder="Enter search radius">
+              <input type="button" value="set radius(m)" onclick="ChangeRadius()" style="height:32px">
+          </div>
+
+          <span id="region-suburb" style="visibility:hidden !important; display:none !important"></span>
+          <a href="#"  id="postNextEvent" onclick="FXN_post_events_menu()" ></a>
+      </form>
+
+        <script>
+        function FXN_show_input_radius(){
+            if (showRadius==="true"){document.getElementById('radius-input').style.display = "block";}
+        }
+
+        function focusinFunction() {$(".icon_addressInput").css("display","block"); $("#address-input").css("padding-right","30px")}
+
+        function focusoutFunction(){
+            $(".icon_addressInput").css("display","none"); $("#address-input").css("padding-right","0px");
+             FXN_show_input_radius();//always below $(".icon_addressInput").css("....")
+        }
+        </script>
+
+        <!-- Push Wrapper -->
+        <div class="mp-pusher" id="mp-pusher" style= "margin-top:-60px !important; ">   
+            <nav id="mp-menu-nav1" class="mp-menu menu-shadow">    <!--inset-dark 1 -->
+             <!--<div id="general-mainlist" > <br></div>-->
+
+                <div class="mp-level mp-levelX trigger-open-menu" style="" ><br><br>
+                    <div class="mnavaa "   style=" margin-left:-2px;"> 
+                        <!-- Return to Top -->
+                        <a href="#" class="return-to-top">
+                          <i class="fa  fa-chevron-up" ></i>
+                        </a>
+                        <ul id="find-mp-content" style=" padding-left:10px; padding-right:10px; overflow:visible !important;" >
+                            <span class=" mainlistz   white-backG"  style="margin-top:-15px; overflow:visible !important;  ">
+                                <!--<li style=" overflow:visible !important; "><br>
+                                    <div >
+                                        <select class="styled-select " id="select-event-wish-1" onchange="selectfxn_1()" style="padding-left:50px"> 
+                                            <option  id="select-eventCat-1" value="1"><h2 style="padding-left:50px">Arising</h2></option>
+                                            <option  id ="select-wishCat-1" value="2" >Wish to happen</option>
+                                            <option  value="3" style="margin-left:8px">Select Tags</option>
+                                        </select>
+                                    </div>
+                                </li>-->
+                                <li class="cluster-table">
+                                    <div class="cluster-table-row">
+                                        <div href="#" class="cluster-table-cell">
+                                            <!--<div class="icon-wrapper"><i class="fa fa-users custome-icon custome-icon1"><span class="fix-editor">&nbsp;</span></i></div>For who
+                                            <i class="fa  fa-angle-right lightFont  pull-right" style="margin-top:-5px; margin-right:10px"></i>-->
+
+                                            <ul>
+                                                <li class="gray-color" style=" overflow:visible !important; ">
+                                                    <div>
+                                                        <a href="#" class="cluster-table-cell remove_shadow_mp-menu"  onClick="FXN_hide_filter_eventsBY()"  style="text-align: center">                                
+                                                            <div class="icon-wrapper">
+                                                                <i class="fa fa-users custome-icon custome-icon1"><span class="fix-editor">&nbsp;</span></i>
+                                                            </div>
+                                                            <div class="gray-color">For who
+                                                                <!--<i class="fa  fa-angle-right lightFont  pull-right" style="margin-top:-5px; margin-right:10px"></i>-->
+                                                            </div>
+                                                        </a>
+                                                        <div class="mp-level fixedpos  z-index2 ">
+                                                            <div class="mnavaa topMargin30  " >
+                                                                <h2 >Suitable to: <i class="fa fa-users pull-right gray-color" style="margin-right:-15px"></i></h2>
+                                                                <a class="mp-back" href="#" onClick="FXN_show_filter_eventsBY()">back</a>
+                                                                <ul class="list4whoETC">  
+                                                                    <li class="gray-color" >
+                                                                        <div class="panel-body"> <div class="gmarkers"><i class="fa fa-users "></i><span class="padCheckbox"> Family</span><input id="finda1" type="checkbox" class="pull-right"><label for="finda1" class="pull-right"></label></div></div>
+
+                                                                        <div class="panel-body"> <div class="gmarkers"><i class="fa fa-child "></i><span class="padCheckbox"> Kids</span><input id="finda2" type="checkbox" class="pull-right"><label for="finda2" class="pull-right"></label></div></div>
+
+                                                                        <div class="panel-body"> <div class="gmarkers"><i class="fa fa-users "></i><span class="padCheckbox"> Teens</span><input id="finda3" type="checkbox" class="pull-right"><label for="finda3" class="pull-right"></label></div></div>
+
+                                                                        <div class="panel-body"> <div class="gmarkers"><i class="fa fa-users "></i><span class="padCheckbox"> Youth </span><input id="finda4" type="checkbox" class="pull-right"><label for="finda4" class="pull-right"></label></div></div>
+
+                                                                        <div class="panel-body"> <div class="gmarkers"><i class="fa fa-users "></i><span class="padCheckbox"> Parents</span><input id="finda5" type="checkbox" class="pull-right"><label for="finda5" class="pull-right"></label></div></div>
+
+                                                                        <div class="panel-body"> <div class="gmarkers"><i class="fa fa-users "></i><span class="padCheckbox"> Adults</span><input id="finda6" type="checkbox" class="pull-right"><label for="finda6" class="pull-right"></label></div></div><br>
+                                                                        
+                                                                        <button type="button" class=" pull_button btn-primary notTagging"  style="margin-left:3px;;  ; width:230px; height:50px; background: #5d7404">
+                                                                            <i class="fa fa-hashtag"></i>  Confirm Tagging  
+                                                                            <i class="fa fa-tags"></i>
+                                                                        </button><br>
+
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div href="#" class="cluster-table-cell">
+                                            <ul>
+                                                <li class="gray-color" style=" overflow:visible !important; ">
+                                                    <div>
+                                                        <a href="#" class="cluster-table-cell remove_shadow_mp-menu"  onClick="FXN_hide_filter_eventsBY()"  style="text-align: center">
+                                                            <div class="icon-wrapper">
+                                                                <i class="fa fa-map-marker custome-icon custome-icon2"><span class="fix-editor">&nbsp;</span></i>
+                                                            </div>
+                                                            <div class="gray-color">Where
+                                                                <!--<i class="fa  fa-angle-right lightFont  pull-right" style="margin-top:-5px; margin-right:10px"></i>-->
+                                                            </div>
+                                                        </a>
+                                                        <div class="mp-level fixedpos  z-index2 " >
+                                                            <div class="mnavaa topMargin30  " >
+
+                                                                <div > 
+                                                                    <h2 >Where/venue <i class="fa fa-map-marker pull-right  gray-color" style="margin-right:-15px"></i></h2>
+                                                                    <a class="mp-back" href="#" onClick="FXN_show_filter_eventsBY()">back</a>
+                                                                    <ul class="list4whoETC">  
+                                                                        <li class="gray-color" >
+                                                                            <div class="panel-body"> <div class="gmarkers"><i class="fa fa-users "></i><span class="padCheckbox"> Public space</span><input id="finda15" type="checkbox" class="pull-right"><label for="finda15" class="pull-right"></label></div></div>
+
+                                                                            <div class="panel-body"> <div class="gmarkers"><i class="fa fa-bed"></i><span class="padCheckbox"> Private space</span><input id="findd9" type="checkbox" class="pull-right"><label for="findd9" class="pull-right"></label></div></div>
+
+                                                                            <div class="panel-body"> <div class="gmarkers"><i class="fa fa-bed"></i><span class="padCheckbox"> Community Facility</span><input id="findd10" type="checkbox" class="pull-right"><label for="findd10" class="pull-right"></label></div></div>
+
+                                                                            <div class="panel-body"> <div class="gmarkers"><i class="fa fa-graduation-cap" ></i><span class="padCheckbox"> School & Education</span><input id="findd12" type="checkbox" class="pull-right"><label for="findd12" class="pull-right"></label></div></div>
+
+                                                                            <div class="panel-body"> <div class="gmarkers"><i class="fa fa-university"></i><span class="padCheckbox"> Sport Facility</span><input id="findd13" type="checkbox" class="pull-right"><label for="findd13" class="pull-right"></label></div></div>
+
+                                                                            <div class="panel-body"> <div class="gmarkers"><i class="fa fa-university"></i><span class="padCheckbox"> Spiritual/Religious</span><input id="findd14" type="checkbox" class="pull-right"><label for="findd14" class="pull-right"></label></div></div>
+
+
+                                                                            
+
+                                                                            
+                                                                            <button type="button" class=" pull_button btn-primary notTagging"  style="margin-left:3px;;  ; width:230px; height:50px; background: #5d7404">
+                                                                                <i class="fa fa-hashtag"></i>  Confirm Tagging  
+                                                                                <i class="fa fa-tags"></i>
+                                                                            </button><br>
+
+                                                                        </li>
+                                                                        <!--<li class="icon" >
+                                                                            <div class="find-events-list leftMargin-42 postTagging"></div>
+                                                                        </li>-->
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="cluster-table-row">
+                                        <div href="#" class="cluster-table-cell">
+                                            <!--<div class="icon-wrapper"><i class="fa fa-users custome-icon custome-icon1"><span class="fix-editor">&nbsp;</span></i></div>For who
+                                            <i class="fa  fa-angle-right lightFont  pull-right" style="margin-top:-5px; margin-right:10px"></i>-->
+
+                                            <ul>
+                                                <li class="gray-color" style=" overflow:visible !important; ">
+                                                    <div>
+                                                        <a href="#" class="cluster-table-cell remove_shadow_mp-menu"  onClick="FXN_hide_filter_eventsBY()"  style="text-align: center" >
+                                                            <div class="icon-wrapper">
+                                                                <i class="fa fa-heartbeat custome-icon custome-icon1"><span class="fix-editor">&nbsp;</span></i>
+                                                            </div>
+                                                            <div class="gray-color">Active life
+                                                                <!--<i class="fa  fa-angle-right lightFont  pull-right" style="margin-top:-5px; margin-right:10px"></i>-->
+                                                            </div>
+                                                        </a>
+                                                        <div class="mp-level fixedpos  z-index2 ">
+                                                            <div class="mnavaa topMargin30  " >
+                                                                <div > 
+                                                                    <h2  >Active Life <i class="fa fa-heartbeat pull-right  gray-color" style="margin-right:-15px"></i></h2>
+                                                                    <a class="mp-back" href="#" onClick="FXN_show_filter_eventsBY()">back</a>
+                                                                    <ul class="list4whoETC"> 
+                                                                        <li class="gray-color">
+
+                                                                            <div class="panel-body"> <div class="gmarkers"><i class="fa fa-users "></i><span class="padCheckbox"> Music & Entertainment</span><input id="finda14" type="checkbox" class="pull-right" style="x"><label for="finda14" class="pull-right" ></label></div></div>
+
+                                                                            <div class="panel-body"> <div class="gmarkers"><i class="fa fa-users "></i><span class="padCheckbox"> Cultures & Community</span><input id="finda12" type="checkbox" class="pull-right"><label for="finda12" class="pull-right" ></label></div></div>
+
+                                                                            <div class="panel-body"> <div class="gmarkers"><i class="fa fa-users "></i><span class="padCheckbox"> Lifestyle</span><input id="finda8" type="checkbox" class="pull-right"><label for="finda8" class="pull-right"></label></div></div>
+
+                                                                            <div class="panel-body"> <div class="gmarkers"><i class="fa fa-heartbeat "></i><span class="padCheckbox"> Sports, Outdoors & <br><span style="margin-left:20px"> recreation</span></span> <input id="findc9" type="checkbox" class="pull-right"><label for="findc9" class="pull-right" style=" margin-top:-10px"></label></div></div>
+
+
+                                                                            <div class="panel-body"> <div class="gmarkers"><i class="fa fa-moon-o "></i><span class="padCheckbox"> Nightlife </span><input id="findc7" type="checkbox" class="pull-right"><label for="findc7" class="pull-right" ></label></div></div>
+
+                                                                            
+
+                                                                            <div class="panel-body"> <div class="gmarkers"><i class="fa fa-users "></i><span class="padCheckbox"> Business/Networking</span><input id="finda16" type="checkbox" class="pull-right"><label for="finda16" class="pull-right" ></label></div></div>
+
+                                                                            <!--fa-barcode-->
+                                                                            <div class="panel-body"> <div class="gmarkers"><i class="fa fa-balance-scale "></i><span class="padCheckbox"> Markets</span><input id="findb1" type="checkbox" class="pull-right"><label for="findb1" class="pull-right" ></label></div></div>
+
+                                                                            <div class="panel-body"> <div class="gmarkers"><i class="fa fa-car" aria-hidden="true"></i><span class="padCheckbox"> Travel & Motoring</span><input id="finde1" type="checkbox" class="pull-right"><label for="finde1" class="pull-right" ></label></div></div>
+
+                                                                            <br>
+                                                                            <button type="button" class=" pull_button btn-primary notTagging"  style="margin-left:3px ; width:230px; height:50px; background: #5d7404">
+                                                                                <i class="fa fa-hashtag"></i>  Confirm Tagging  
+                                                                                <i class="fa fa-tags"></i>
+                                                                            </button>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>                                                
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div href="#" class="cluster-table-cell">
+                                            <ul>
+                                                <li class="gray-color" style=" overflow:visible !important; ">
+                                                    <div>
+                                                        <a href="#" class="cluster-table-cell remove_shadow_mp-menu"  onClick="FXN_hide_filter_eventsBY()"  style="text-align: center">
+                                                            <div class="icon-wrapper">
+                                                                <i class="fa fa-heart custome-icon custome-icon1"><span class="fix-editor">&nbsp;</span></i>
+                                                            </div>
+                                                            <div class="gray-color">Giving
+                                                                <!--<i class="fa  fa-angle-right lightFont  pull-right" style="margin-top:-5px; margin-right:10px"></i>-->
+                                                            </div>
+                                                        </a>
+                                                        <div class="mp-level fixedpos  z-index2 ">
+                                                            <div class="mnavaa topMargin30  " >
+
+                                                                <div > 
+                                                                    <h2   > Giveaways<i class="fa fa-heart pull-right  gray-color" style="margin-right:-15px"></i></h2>
+                                                                    <a class="mp-back" href="#" onClick="FXN_show_filter_eventsBY()">back</a>
+                                                                    <ul class="list4whoETC">
+                                                                        <li class="gray-color" >
+                                                                            <div class="panel-body"> <div class="gmarkers"><i class="fa fa-users "></i><span class="padCheckbox"> Volunteer & Charity</span><input id="finda9" type="checkbox" class="pull-right"><label for="finda9" class="pull-right"></label></div></div>
+                                                                            <div class="panel-body"> <div class="gmarkers"><i class="fa fa-users "></i><span class="padCheckbox"> Giveaways & re-use</span><input id="finda10" type="checkbox" class="pull-right"><label for="finda10" class="pull-right"></label></div></div>
+                                                                            <br>
+                                                                            <button type="button" class=" pull_button btn-primary notTagging"  style="margin-left:3px;;  ; width:230px; height:50px; background: #5d7404">
+                                                                                <i class="fa fa-hashtag"></i>  Confirm Tagging  
+                                                                                <i class="fa fa-tags"></i>
+                                                                            </button>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </span>
+                            <span>     
+                                <li class="icon postTagging" style="background:#F8F8FF"> 
+                                    <div class="container-search" style=" margin-top:41px; color:#fff">
+                                        <input type="search"  style="" id="search" class="fa-align-center" placeholder="Search..." />
+                                        <i class="fa  fa-search icona" style="font-size:30px; line-height:inherit;text-align:center"></i>
+                                    </div> 
+                                </li> 
+                            </span><hr class="scissors-DottedLine">                        
+                            <span class="" >                          
+                                <li class="mapComingEvents mapComing_CheckboxControlBox" style="display:none"></li>
+                                <li class="leftMargin10">
+                                    <div class="mapComing_CheckboxControlBox-list" ></div>
+                                </li>
+                            </span><br><br><br>
+                        </ul>
+                    </div>
+                </div>
+         <!--post events  menu ends here--> 
+            </nav>
+           <!-- /mp-menu -->
+
+
+            <div class="post2Event_popup" style="display:none;">            
+                <div class="postEvent-popup"> <i class="fa fa-calendar-plus-o"></i></div>
+                <div ><span style="padding-left:10px"></span>  What's Happening ?</div>
+            </div>
+            <br><br><br><br><br><br><br><br><br><br>
+
+
+
+            <nav id="mp-menu-nav2" class="mp-menu menu-shadow"> 
+                <div class="mp-level mp-levelX" ><br>
+                    <div class="mnavaa " >
+                        <a href="#" class="return-to-top">
+                            <i class="fa  fa-chevron-up" ></i>
+                        </a>
+                        <ul id="nextPost-mp-content" >
+                            <span class="mainlistz hidexflow hideyflow">                                    
+                                <li class="icon"  > 
+                                    <ul style="margin-left:5px; width:100%; ">
+                                        <!--<li class="icon" style="; width:300px ">
+                                          <div >
+                                          <select class="styled-select" id="select-event-wish-2" onchange="selectfxn_2()" style="padding-left:50px"> 
+                                              <option id="select-eventCat-2" value="1"><h2 style="padding-left:50px">Arising</h2></option>
+                                              <option id ="select-wishCat-2" value="2" >Its a wish</option>
+                                              <option  value="3" style="margin-left:8px">Select one</option>
+                                          </select>
+                                          </div>
+                                        </li>-->
+
+                                        <li style="overflow:hidden">
+                                            <div id="pull_section" style="overflow:hidden">
+                                                <div class="well" style="overflow:hidden"><br>
+                                                    <div class="row" style="overflow:hidden" >
+                                                        <div class="" >
+                                                            <div class="profile_box" >
+                                                                <img src="public/images/placeholder.jpg" class="img-responsive img-circle" alt="" />
+                                                                <h2 style="margin-top:-15px">Danny <br> Washington</h2>  
+                                                                <div class="view_box">
+                                                                    <p style="font-size:14px"><span>200 </span><br><span>Views</span></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="" >
+                                                            <div class="video_container" >
+                                                                <div class="vendor" >
+                                                                    <iframe src="https://www.youtube.com/embed/RUhNjot1nC8?playlist=RUhNjot1nC8&start=7&rel=0&autoplay=0&controls=1&showinfo=0&loop=1&iv_load_policy=3&enablejsapi=1" frameborder="0" width="95%" height="auto" style="border: 0px;"></iframe>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>                                                    
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>                                
+                                                <div class="well"    style=" margin-top:-22px;; font-color: #F8F8FF">
+                                                    <div class="row" style="margin-left:-20px">
+                                                        <div class="col-lg-12 border_class" style ="width:280px; padding:0px;">
+                                                            <div class="media" >
+                                                                <div class="media-left" >
+                                                                    <div data-toggle="collapse" data-target=".drag_drop_uploader" > </div>
+                                                                </div>
+                                                                <div class="media-body"  data-toggle="collapse" data-target=".drag_drop_uploader" onclick="checkopen()" style =" padding:5px; cursor:pointer;">
+                                                                    <h4 class="media-heading pull-right fontSize18" style="padding-top:5px; padding-right:10px; margin-right:20px;">Upload photos & videos</h4>
+                                                                    <i class="fa fa-camera" style =" font-size: 25px; margin-left: -5px;"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="drag_drop_uploader collapse" id="upload_zone" style="margin-top:10px">
+                                                            <form action="/api/photos" class="dropzone" id="drop-zone" method="post" enctype="multipart/form-data">
+                                                                <div id='plus' class='dz-preview dz-processing dz-success dz-complete dz-image-preview'>
+                                                                    <div id='dz-add' style =" cursor:pointer;">
+                                                                        <img src="public/images/additional/plus.png" alt="+" style="font-size:100px  ; margin-right:35px; float:right" data-dz-thumbnail="" />
+                                                                    </div>
+                                                                </div>
+                                                            </form><br><br><br><br>
+                                                            <br><br><br><!--adding style="margin-left:100%; float:right"  moves the + to the end but then ovelaps with the  enter URL-->
+                                                            <form action="#" id="url-upload" class="url-upload" method="post" style="margin-left:-10px">
+                                                                <input class="url-text" type="text" name="url" placeholder="add an image/video link" />
+                                                                <span class="upload_button"><i class="fa fa-arrow-right" style="color:#fff"></i></span>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li> 
+                                        <li style="margin-top:-15px !important ; margin-bottom:-20px !important; style=100% ">
+                                            <div class="border_class" style="width:265px;bottom:0px !important">
+                                                <div class="media fontSize14">
+                                                    <div class="media-left" >
+                                                        <span class="form_description_add"><span class="icon fontSize14" id="btn_title" onload="FXN_postWith_MoreDetails('btn_title', 'fa-pencil-square-o')" ></span></span>
+                                                    </div>                                                                
+                                                    <div class="media-body" style=" margin-top:10px;">
+                                                        <textarea class="form_title fontSize18" type="text" placeholder="Title: example, join us hiking"  style="padding-top:4px;"></textarea>
+                                                        <br>
+                                                        <textarea class="form_description fontSize18" placeholder="Make a description of the event"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+
+                                        <li style="width:100%">
+                                            <div class="border_class" style="width:265px; margin-top:25px !important;">
+                                                <div class="media">                                          
+                                                    <div class="media-left">
+                                                        <span class="form_date_add" ><span class="icon" id="btn_date" onload="FXN_postWith_MoreDetails('btn_date', 'fa-calendar')"></span></span>
+                                                    </div>
+                                                    <div class="media-body" >
+                                                        <a  href="#" id="date_input" onclick="FXN_dateNtime()" style="margin-top:-10px !important;">
+                                                            <input class="form_date_1 full_width fontSize18" type="search" placeholder="When" style="">
+                                                            <input class="form_date_2 fontSize18" type="search" placeholder="End Date" style="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li style="">
+                                            <div class="border_class" style="margin-top-10px; width:265px; ">
+                                                <div class="media">
+                                                    <div class="media-left">
+                                                        <span class="form_time_add"><span class="icon" id="btn_time" onload="FXN_postWith_MoreDetails('btn_time', 'fa-clock-o')"></span></span>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <a href="#" class="fontSize18" id="time_input" onclick="FXN_dateNtime()">
+                                                            <input class="form_time_1 full_width fontSize18" type="search" placeholder="Time" style="margin-top:2px;">
+                                                            <input class="form_time_2 fontSize18" type="search" placeholder="End Time" style="margin-top:2px;">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>                                                
+                                        <li>
+                                            <div class="border_class" style="width:265px; padding-bottom:10px">
+                                                <div class="media">                                          
+                                                    <div class="media-left" style="">
+                                                        <span class="form_place_add" ><span class="icon" id="btn_place" onload="FXN_postWith_MoreDetails('btn_place', 'fa-map-marker')"></span></span>
+                                                    </div>                                                                
+                                                    <div class="media-body">                                       
+                                                        <input class="form_place fontSize18" type="search" placeholder="Type Place Name" style="">
+                                                        <a href="#">
+                                                            <input class="form_street full_width fontSize18" type="search" placeholder="Enter street address" style="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li style=" ">
+                                            <div class="border_class" style=" width:285px; padding-bottom:0px">
+                                                <div class="media">
+                                                <ul><li >
+                                                    <a href="#" class="button eventCategory-tags" style="margin-left:-12px; width:250px;9">
+                                                        <span class="tags_description_add" style="font-size:16px"><span class="icon" id="btn_tags"  onload="FXN_postWith_MoreDetails('btn_tags', 'fa-hashtag')" style="margin-top:-10px; margin-left:-107px; width:200px !important; height:35px" ></span></span>
+                                                    </a> 
+                                                    <h2 class="form_title eventCategory-tags" style="margin-top:-60px;margin-left:55px; padding-left:5px; width:188px ; font-size:16px; cursor:pointer">Tagging = finding</h2>
+                                                    </li></ul> <br><br>                                                             
+                                                    <div >                                                        
+                                                        <textarea class="tags_description fontSize18" placeholder="List  of event tags event" ></textarea>
+                                                    </div><br><br>
+                                                    <div class="">
+                                                        <button type="button" class=" pull_button btn-primary"  style="margin-left:-13px; margin-top: -15px ; width:260px; height:50px;  background: #5d7404">
+                                                            <i class="nav-icon"></i>
+                                                            <i class="fa fa-calendar-plus-o"></i> Share Happenings  
+                                                            <i><img src="public/images/additional/shooting-star-white.png" alt=""></i>
+                                                        </button>
+                                                    </div>
+                                                </div><br><br><br>
+                                            </div>
+                                        </li> 
+                                    </ul>
+                                </li>
+                            </span>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+
+
+
+            <nav id="mp-menu-nav3" class="mp-menu menu-shadow">    <!--inset-dark 1 -->
+             <!--<div id="general-mainlist" > <br></div>-->
+
+                <div class="mp-level mp-levelX trigger-open-menu" style="" ><br><br>
+                    <div class="mnavaa "   style=" margin-left:-2px;"> 
+                        <!-- Return to Top -->
+                        <a href="#" class="return-to-top">
+                            <i class="fa  fa-chevron-up" ></i>
+                        </a>
+                        <ul id="portfolio-mp-content" style=" padding-left:10px; padding-right:10px; overflow:visible !important;" >
+                            <span class="mainlistz hidexflow" id="loginNow" style="color:#4F4F2F !important" > 
+                                <li  class="ccccc"></li>
+                                <li class="icon"><br>
+                                    <div class="ccccc">
+                                        <a href="#" class="subfold-login m1 fontSize20"  style="">&nbsp;Log In
+                                            <i class="fa fa-sign-in   gray-color pull-right" style=" float:right; margin-right:5px; margin-top:-25px;  font-size:32px "></i> 
+                                        </a><br><br>
+                                    </div>                                    
+                                </li>                                
+
+                                <li class="icon" >
+                                    <div href="#" class="cluster-table-cell">
+                                      <ul>
+                                          <li class="gray-color" style=" overflow:visible !important; "><div>
+                                              <a href="#" class="cluster-table-cell  button"  id="subfold-showup">
+                                                  <div class="icon-wrapper">
+                                                      <i class="fa fa-ticket custome-icon custome-icon3"><span class="fix-editor">&nbsp;</span></i>
+                                                  </div><br>
+                                                  <div class="gray-color" style="text-align: center">Free VIP Ticket
+                                                      <!--<i class="fa  fa-angle-right lightFont  pull-right" style="margin-top:-5px; margin-right:10px"></i>-->
+                                                  </div>
+                                              </a>
+                                          </div>
+                                          </li>
+                                      </ul>
+                                    
+                                    </div>
+                                    <div class="mp-level trigger-hide-submenu  fixedpos  z-index2 topMargin-53">
+                                        <div class="mnavaa   topMargin30"><br>
+                                            <div style="padding-top:20px">       
+                                                <span class="mainlistz hidexflow" style="background:#fff; color:#3d4f39 !important" >
+                                                    <h2   >Free Events <i class="fa fa-fort-awesome pull-right " style="font-size:30px;margin-right:-20px; margin-top:-10px"></i></h2>
+                                                    <a class="mp-back gray-color button" id="backto-outsourced-list" href="#" >back</a>
+                                                    <ul style="color:black">
+                                                        <li >
+                                                            <div class="ccccc" style="" ><br>
+                                                                <div class="fontSize20" style=" margin-left:20px;"> Balance: 
+                                                                </div>
+                                                                <div style="margin-top:-30px; margin-left:175px; font-size:45px;">3€</div>
+                                                            </div>
+                                                        </li>
+
+                                                        <li >
+                                                            <div class="ccccc" style="" ><br>
+                                                                <a href="#" class="addfunds fontSize20" style="margin-left:20px;"> Top-up
+                                                                        <i class="fa fa-angle-right lightFont " style="margin-top:-30px;  float:right; margin-right:12px;  font-size:32px"></i>
+                                                                    </a><br><br>
+
+                                                                <div class="mp-level fixedpos  z-index2 ">
+                                                                    <div class="mnavaa topMargin30  "  style="padding-top:50px; ">
+
+                                                                        <div > 
+                                                                            <h2 >Add funds <i class="fa fa-money pull-right gray-color " style="margin-right:-15px"></i></h2>
+                                                                            <a class="mp-back" href="#" >back</a>
+                                                                            <ul class="list4whoETC">  
+                                                                                <li class="gray-color" >
+                                                                                    
+
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+
+                                                        <li>
+                                                            <div class="ccccc" style="" ><br>
+                                                                <a href="#" class="reservation fontSize20" style="margin-left:20px;"> Reservation
+                                                                        <i class="fa fa-angle-right lightFont " style="margin-top:-30px;  float:right; margin-right:12px;  font-size:32px"></i>
+                                                                    </a><br><br>
+
+                                                                <div class="mp-level fixedpos  z-index2 ">
+                                                                    <div class="mnavaa topMargin30  "  style="padding-top:50px; ">
+
+                                                                        <div > 
+                                                                            <h2 >Reserve event <i class="fa fa-money pull-right gray-color " style="margin-right:-15px"></i></h2>
+                                                                            <a class="mp-back" href="#" >back</a>
+                                                                            <ul >
+                                                                                <li class="icon"> 
+                                                                                    <div class="effect1">
+                                                                                        <h1 style="font-size: 300%;">Start a bounty</h1><br>
+
+                                                                                        <p>I hereby offer <span style="font-weight: bold;">1€</span> of my own <span style="font-weight: bold;">Reputation</span> to confirm my wish to attend this event.</p><br>
+                                                                                        <p style="font-size: 60%;">This reputaion is deducted immediately and is fully refunded when you attend the event. Refund is not possible when you fail to show-up
+                                                                                        </p>
+                                                                                        <br>
+                                                                                        <button type="button" class=" pull_button btn-primary"  style="margin-left:-13px; margin-top: -15px ; width:190px; height:50px;  background: #5d7404">
+                                                                                            <i class="nav-icon"></i>
+                                                                                            <i class="fa fa-calendar-plus-o"></i> Next...  
+                                                                                            <i><img src="public/images/sidebar-icon/shooting-star-white.png" alt=""></i>
+                                                                                        </button>
+                                                                                    </div>   
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="ccccc" style="" ><br>
+                                                                <a href="#" class="account-history fontSize20" style="margin-left:20px;"> History
+                                                                        <i class="fa fa-angle-right lightFont " style="margin-top:-30px;  float:right; margin-right:12px;  font-size:32px"></i>
+                                                                    </a><br><br>
+
+                                                                <div class="mp-level fixedpos  z-index2 ">
+                                                                    <div class="mnavaa topMargin30  "  style="padding-top:50px; ">
+
+                                                                        <div > 
+                                                                            <h2 >Account History <i class="fa fa-money pull-right gray-color " style="margin-right:-15px"></i></h2>
+                                                                            <a class="mp-back" href="#" >back</a>
+                                                                            <ul >
+                                                                                <li class="icon">  
+                                                                                    
+                                                                                    
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li><br><br>                                                        
+                                                         
+                                                        
+                                                        <li></li>                                                 
+                                                    </ul>
+                                                    
+                                                </span>
+
+
+                                                <br><br><br>
+                                                <!--<div  id="mobile-bottomLeftDiv"></div>-->
+
+                                                <div id="headerID"  >
+                                                    <div onClick="toggleVideo();" >
+                                                        <div class=" container container-help">
+                                                            <div class="form-control play-video">
+                                                                <table border="1">
+                                                                  <tr>
+                                                                    <td class="vidInner-container">WATCH: <img src="public/images/circle.png" style=""/> explainer</td>
+                                                                  </tr>
+                                                                </table>                           
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="codegena" id="popupVid" style="display:none; ">
+                                                   <iframe src="https://www.youtube.com/embed/RUhNjot1nC8?playlist=RUhNjot1nC8&start=7&rel=0&autoplay=0&controls=1&showinfo=0&loop=1&iv_load_policy=3&enablejsapi=1" frameborder="0" width="88%" height="auto" style="border: 0px;"></iframe>
+                                                   <a href="#" onClick="toggleVideo('hide');">
+                                                        <div class="close"><img src="public/images/close_info.png" style="height:60px; width:60px"></div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+
+
+                                <li  class="ccccc" style="margin-top:-20px"></li>
+                                <li class="gray-color">
+                                    <h4 style="padding:10px 10px 10px 5px; font-size:20px; color: font-size:34px;">Out-sourced Events: </h4>
+                                </li>                                
+
+                                <li class="outsourcedEvents gray-color" >
+                                    <div class="panel-body"> <div class="gmarkers"><i class="fa fa-users "></i><span class="padCheckbox font-engravedInset"> Meetup</span><span class="pull-right meetUpCheckboxControlBox"></span></div></div>
+
+                                    <div class="panel-body"> <div class="gmarkers"><i class="fa fa-users "></i><span class="padCheckbox font-engravedInset"> Yelp</span><span class="pull-right yelpCheckboxControlBox"></span></div></div>
+
+                                    <div class="panel-body"> <div class="gmarkers"><i class="fa fa-users "></i><span class="padCheckbox font-engravedInset"> Facebook</span><span class="pull-right fbCheckboxControlBox"></span></div></div>
+
+                                    <div class="panel-body"> <div class="gmarkers"><i class="fa fa-users "></i><span class="padCheckbox font-engravedInset"> Eventbrite</span><span class="pull-right ebCheckboxControlBox"></span></div></div>
+                                    <div class="ccccc"></div>
+                                </li>
+                                <li class="icon"><br>
+                                    <div class="ccccc">
+                                        <a href="index.html" class="subfold-logout m1 fontSize20" id="logoutNow" style=";">&nbsp;Log out
+                                            <i class="fa fa-sign-out   gray-color pull-right" style=" float:right; margin-right:5px; margin-top:-25px;  font-size:32px "></i> 
+                                        </a><br><br>
+                                    </div>
+                                    
+                                </li>
+                                 
+                            </span>
+                            <span class="" >
+                            <li class="leftMargin10">
+                                <div class="meetUpCheckboxControlBox-list" ></div>
+                                <div class="yelpCheckboxControlBox-list"></div>
+                                <div class="fbCheckboxControlBox-list"></div>
+                                <div class="ebCheckboxControlBox-list"></div>
+                            </li></span><br><br><br>
+                        </ul>
+                    </div>
+                </div>                  
+    <!--portfolio menu ends here-->
+            </nav>
+
+    
+ <!-- mp-menu myspace-inner-1-->  
+            <nav id="myspace-inner-1" class="mp-menu  menu-shadow">
+                <div class="mp-level  mp-levelX"><br>
+                    <a href="#" class="return-to-top">
+                        <i class="fa  fa-chevron-up" ></i>
+                    </a>
+                    <div class="mnavaa" >
+                        <h2 class="fa-mypages">My profile <i class="fa fa-user "></i></h2>
+                        <ul>
+                            <li class="icon">
+                                
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- mp-menu myspace-inner-2-->
+            <nav id="myspace-inner-2" class="mp-menu  menu-shadow" >
+                <div class="mp-level mp-levelX" ><br>
+                    <a href="#" class="return-to-top">
+                        <i class="fa  fa-chevron-up" ></i>
+                    </a>
+                    <div class="mnavaa" >
+                        <h2 class="fa-mypages">Favorites list<i class="fa fa-star"></i></h2>
+                        <br>
+                        <ul>
+                            <li class="icon" >
+                                
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- mp-menu myspace-inner-3-->
+            <nav id="myspace-inner-3" class="mp-menu  menu-shadow" >
+                <div class="mp-level mp-levelX"><br>
+                    <a href="#" class="return-to-top">
+                        <i class="fa  fa-chevron-up" ></i>
+                    </a>
+                    <div class="mnavaa">
+                        <h2  class="fa-mypages">I'm attending<i class="fa fa-calendar-plus-o"></i></h2>
+                        <ul>
+                            <li class="icon">
+                                
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- mp-menu myspace-inner-4-->    
+
+
+            <nav id="myspace-inner-4" class="mp-menu  menu-shadow" >
+                <div class="mp-level mp-levelX "><br>
+                    <a href="#" class="return-to-top">
+                        <i class="fa  fa-chevron-up" ></i>
+                    </a>
+                    <div class="mnavaa">
+                        <h2  class="fa-mypages">I'm organizing<i class="fa fa-bullhorn"></i></h2>
+                        <ul>
+                            <li class="icon">
+                                
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- mp-menu myspace-inner-5-->
+            <nav id="myspace-inner-5" class="mp-menu  menu-shadow">
+                <div class="mp-level mp-levelX" >
+                <br>
+                    <a href="#" class="return-to-top">
+                        <i class="fa  fa-chevron-up" ></i>
+                    </a>
+                    <div class="mnavaa">
+                        <h2  class="fa-mypages">I Shared<i class="fa  fa-share-alt"></i></h2>
+                        <ul>
+                            <li class="icon">
+                                
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+<!-- nav script -->
+           <style>#image2mapcanvas{margin-top:-25px; width:100%; height:100% }</style>
+            <div id="map-satellite" onclick="togglemap()" ></div>
+            <div id="map-canvas" style=" z-index:1 !important">
+              <img id="image2mapcanvas" src="public/images/map-icons/gda_world_map.jpg" >
+            </div>
+            <div id="btn-closeStreetView" class="btn-closeStreetView" >
+                <div class="zoom-mylocation" style="margin.top:150px;">
+                    <a href="#"><i class="fa fa-times" ></i></a>
+                </div>
+            </div>
+            <div class="zoom-mylocation "><a href="#"></a></div>;  
+            <!--/div> //scroller -->
+        </div> <!-- // pusher 2 -->
+
+
+        <button class="show_externalEvents_only">show all</button> 
+        <button class="show_ourEvents_only">clear all</button>
+
+      
+
+         <div class="referenceCheckbox_internal" style="display: none">
+            <label class="switch">
+              <input type="checkbox" class="internalPosts"></input>
+              <div class="slider round"></div>        
+            </label>
+          </span>
+        </div>
+          <div class="referenceCheckbox_external" style="display: none">
+            <label class="switch">
+              <input type="checkbox" class="externalPosts"></input>
+              <div class="slider round"></div>        
+            </label>
+          </span>
+        </div> 
+
+
+        <nav id="filter_eventsBY" style="background:gray;">
+            <div class="tableDIV">
+                <div class="cellTable rowTable child-filter_eventsBY" id="btn_gotoSearch"><i class="fa fa-search " style="color:#fff; font-size:20px !important;"></i></div>
+                <div class="cellTable rowTable child-filter_eventsBY" id="btn_dateNTime"><i class="fa fa-clock-o " style="color:#fff; font-size:20px !important;"></i></div>
+                <div class="cellTable rowTable child-filter_eventsBY" id="btn_location2"><i class="fa fa-map-marker" style="color:#fff; font-size:20px !important;"></i></div>
+                <div class="cellTable rowTable child-filter_eventsBY" id="btn_sortby2"><i class="fa fa-sort" style="color:#fff; font-size:20px !important;"></i></div>
+                <div class="cellTable rowTable child-filter_eventsBY" id="btn_howfar2"><i class="fa fa-bicycle" style="color:#fff; font-size:20px !important;"></i></div>
+            </div>
+        </nav>
+
+   
+<!--start filter by  date and time-->
+        <div  class="slideWindow  menu-shadow" id ="filterBY_dateNtime" style="width:335px; background: #F8F8FF;">
+            <br><br><br><br><br>
+            <h2 style="font-size:30px; padding-left:20px; ">&nbsp; Date & Time </h2>
+            <div style="position: relative; margin-left:10px;">
+                <iframe src="public/assets/datecalendar/datecalendar.html"   style=" overflow-y:hidden; overflow-x:hidden;height:600px;" ></iframe>
+                <a href="#" type="button" class=" filtersByNext"  style="margin-top:-200px !important;">
+                    <div style="padding-right:50px"><i class="fa fa-calendar-plus-o"  style=" "></i></div>
+                    <div > Next... </div>
+                </a><br><br>
+            </div>
+        </div>
+<!-- date and time filter ends here-->
+
+<!-- location filter starts here-->
+
+
+
+        <div  class="slideWindow  menu-shadow" id ="filterBY_location" style="">
+            <br><br><br><br><br>    
+            <h2 style="font-size:30px; padding-left:20px">&nbsp; Location Filter2</h2> 
+            <a href="#" type="button" class=" filtersByNext" >
+                <div style="padding-right:50px"><i class="fa fa-calendar-plus-o"  style=" "></i></div>
+                <div > Next... </div>
+            </a><br><br><br><br> 
+        </div>
+<!-- locationfilter ends here-->
+
+<!-- sortby filter starts here-->
+        <div  class="slideWindow menu-shadow" id ="filterBY_sort"  >
+            <div class="filter_eventsBY   "  id="sortby-tab" style="  width:373px; height:100px;">
+                <br><br><br><br>
+                <h2 style="font-size:30px; ">&nbsp; Sort by:</h2>
+
+                <div id="tabs-sortby" >
+                    <ul style="border:0px;background:#F8F8FF">
+                        <li style="width:125px; padding-left:10px"><a href="#sortbyTabs-1" style="color:#545454">Simple</a></li>
+                        <li style="width:155px"><a href="#sortbyTabs-2" style="color: #545454">Combination</a></li>
+                    </ul>
+                    <div id="sortbyTabs-1" style="width:287px;">
+                        <div class="dropp" style="margin-left:-20px; width:275px !important">
+                            <div class="dropp-header"> 
+                                <span class="dropp-header__title js-value">Likes</span> <a href="#" class="dropp-header__btn js-dropp-action"><i class="droppIcon"></i></a>
+                            </div>
+                            <div class="dropp-body">
+                                <label for="optA">Time: Upcoming <input type="radio" id="optA" name="dropp" value="Time: Upcoming"/></label>
+                                <label for="optB">Time: Newest <input type="radio" id="optB" name="dropp" value="Time: Newest"/> </label>
+                                <label for="optC">Place: Nearest <input type="radio" id="optC" name="dropp" value="Place: Nearest"/></label>
+                                <label for="optD">Likes <input type="radio" id="optD" name="dropp" value="Likes"/></label>
+                                <label for="optE">Choose Options </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sortbyTabs-2" >
+                        <table >
+                            <tr class="rowClass " style="height:50px; ">
+                                <td class="cellClass "><div class="trtd_bar0 activeClr-bars" id="tr0td0"></div></td>
+                                <td class="cellClass"><div class="trtd_bar1 activeClr-bars"  id="tr0td1"></div></td>
+                                <td class="cellClass"><div class="trtd_bar2 activeClr-bars"  id="tr0td2"></div></td>
+                                <td class="cellClass"><div class="trtd_bar3 activeClr-bars"  id="tr0td3"></div></td>
+                                <td class="cellClass"><div >Likes</div></td>
+                            </tr>
+                            <tr class="rowClass" style="height:70px; ">
+                                <td class="cellClass"><div class="trtd_bar0 activeClr-bars"  id="tr1td0"></div></td>
+                                <td class="cellClass"><div class="trtd_bar1 inactiveClr-bars"  id="tr1td1"></div></td>
+                                <td class="cellClass"><div class="trtd_bar2 inactiveClr-bars"  id="tr1td2"></div></td>
+                                <td class="cellClass"><div class="trtd_bar3 inactiveClr-bars"  id="tr1td3"></div></td>
+                                <td class="cellClass"><div >Upcomming</div></td>
+                            </tr>
+                            <tr class="rowClass" style="height:70px; ">
+                                <td class="cellClass"><div class="trtd_bar0 activeClr-bars"  id="tr2td0"></div></td>
+                                <td class="cellClass"><div class="trtd_bar1 inactiveClr-bars"  id="tr2td1"></div></td>
+                                <td class="cellClass"><div class="trtd_bar2 inactiveClr-bars"  id="tr2td2"></div></td>
+                                <td class="cellClass"><div class="trtd_bar3 inactiveClr-bars"  id="tr2td3"></div></td>
+                                <td class="cellClass"><div >Newest</div></td>
+                            </tr>
+                            <tr class="rowClass" style="height:70px; ">
+                                <td class="cellClass"><div class="trtd_bar0 activeClr-bars"  id="tr3td0"></div></td>
+                                <td class="cellClass"><div class="trtd_bar1 inactiveClr-bars"  id="tr3td1"></div></td>
+                                <td class="cellClass"><div class="trtd_bar2 inactiveClr-bars"  id="tr3td2"></div></td>
+                                <td class="cellClass"><div class="trtd_bar3 inactiveClr-bars"  id="tr3td3"></div></td>
+                                <td class="cellClass"><div >Nearest</div></td>
+                            </tr>
+                        </table>
+
+                        <br><br><br>
+                        <h8 style="font-weight:bold;font-size:12px">Advanced: </h8>
+                        <h8 style="font-size:12px">You can sort by more than 1 field at the same time. for example the  newest and  nearest</h8>
+                    </div>
+                </div>
+                <a href="#" type="button" class=" filtersByNext" >
+                    <div style="padding-right:50px"><i class="fa fa-calendar-plus-o"  style=" "></i></div><div > Next... </div>
+                </a><br><br>
+            </div>
+        </div>
+<!-- sortbyfilter ends here-->
+
+<!-- how farfilter starts here-->       
+        <div  class="slideWindow menu-shadow" id ="filterBY_howfar" style=" background: #fff; ">
+            
+            <br><br><br><br><br>
+            <h2 style="font-size:30px; ">&nbsp; How far? </h2>
+            <div class="poll"></div>                
+                <div class="pollSlider">
+                    <div id="trigger-pollSlider-button"><i class="fa fa-times" aria-hidden="true"></i></div>
+                    <ul>
+                        <li>
+                            <a type="button" class="btn btn-route topMargin8 leftMargin4 greenBorder">
+                                <i class="fa fa-male floatLeft leftMargin4"></i>
+                                <input id="finda100" type="checkbox" class="topMargin-18 rightMargin-17"><label class="topMargin-20 rightMargin-17 pull-right" for="finda100"></label>
+                            </a>                                                                         
+                        </li>
+                        <li>
+                            <a type="button" class="btn btn-route topMargin-60 leftMargin52 greenBorder" >
+                                <i class="fa fa-bicycle floatLeft leftMargin-5 topMargin-2"></i>
+                                <input id="finda101" type="checkbox" class="topMargin-20 rightMargin-17"><label class="topMargin-20 rightMargin-17 pull-right" for="finda101"></label>
+                            </a>                                                    
+                        </li>
+                        <li>
+                            <a type="button" class="btn btn-route topMargin-95 leftMargin100 greenBorder">
+                                <i class="fa fa-bus floatLeft leftMargin-2 topMargin-2"></i>
+                                <input id="finda102" type="checkbox" class="topMargin-20 rightMargin-17"><label class="topMargin-20 rightMargin-17 pull-right" for="finda102"></label>
+                            </a>                                                                        
+                        </li>
+                        <li>
+                            <a type="button" class="btn btn-route topMargin-130 leftMargin148 greenBorder" >
+                                <i class="fa fa-subway floatLeft leftMargin-2 topMargin-2"></i>
+                                <input id="finda103" type="checkbox" class="topMargin-20 rightMargin-17"><label class="topMargin-20 rightMargin-17 pull-right" for="finda103"></label>
+                            </a>
+                        </li>
+                        <li>
+                            <a type="button" class="btn btn-route topMargin-165 leftMargin196 greenBorder">
+                                <i class="fa fa-car floatLeft leftMargin-2 topMargin-2"></i>
+                                <input id="finda104" type="checkbox" class="topMargin-20 rightMargin-17"><label class="topMargin-20 rightMargin-17 pull-right" for="finda104"></label>
+                            </a>
+                        </li>
+                        <li style="margin-top:-68px">
+                            <div id="start-end-route">
+                                <table border="1" class="find-route" style="z-index:999999999; ">
+                                    <tr>
+                                        <td style="padding-left:5px; width:5px">From: </td>
+                                        <td> 
+                                            <input  id="start-route1" type="text" class="form-control style00 route-input1" placeholder="Starting point" style="margin-left:-200px; ">
+                                        </td>
+                                        <td style="width:30px !important;">
+                                            <div type="button" class="fa fa-exchange rotate_90deg" style="cursor:pointer"></div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr >
+                                        <td style="padding-left:5px;width:10px">To: </td>
+                                        <td>
+                                            <input  id="end-route1" type="text" class="form-control style00 route-input2" placeholder="Destination point">
+                                        </td>
+                                        <td >
+                                            <div id="pollSlider-button">
+                                                <a type="button"  >
+                                                    <i class="fa fa-eject rotate_90deg " aria-hidden="true" style="float:right; "></i>
+                                                </a>
+                                            </div> 
+                                        </td>
+                                    </tr>
+                                </table>
+                                                                                                   
+                                <div id="route-info"></div>                              
+                            </div>
+                        </li>
+                    </ul>                
+                </div>
+                <a href="#" type="button" class=" filtersByNext"  style="">
+                    <div style="padding-right:50px"><i class="fa fa-calendar-plus-o"  style=" "></i></div>
+                    <div > Next... </div>
+                </a> <br><br>
+            </div>
+<!-- howfarfilter ends here-->  
+
+
+        </div><!-- //container 1-->
+
+
+<!-- mp-menu myspace-inner-1-->
+    </div>   
+
+  <script type="text/javascript" src="public/libs/jquery/jQuery-v2.1.4-min.js"></script>
+  <script type="text/javascript" src="public/libs/jquery/jquery-ui-v1.11.4/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="public/libs/bootstrap/bootstrap-v3.3.6.min.js" ></script>
+
+    <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=v=3.11.exp&libraries=places&sensor=false"></script>-->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=v=3.11.exp&libraries=places&key=AIzaSyAGZhkB218ckw_lMEd6BO7deAGDj_Hc0pY"></script>
+    
+    <script type="text/javascript" src="public/libs/modernizr/modernizr.custom.js"></script>
+    <script type="text/javascript" src="public/assets/dropzone/dropzone-min.js"></script>
+    <script type="text/javascript" src="public/assets/other_assets/polyfills.js"></script>
+    <!--<script type="text/javascript" src="public/assets/jquery-nicescroll/jquery.nicescroll.min.js"></script>-->
+    <script type="text/javascript" src="public/assets/other_assets/classie.js"></script>
+         
+    <script type="text/javascript" src="public/assets/other_assets/fa-multi-button-min.js"></script>
+    <script type="text/javascript" src="public/scripts/desktop-scripts/main-plugin-mlpushmenu.js"></script>
+
+    
+    <script type="text/javascript" src="public/scripts/desktopNmobile-scripts/MAP-mymaps.js"></script>
+    <script type="text/javascript" src="public/sassets/other_assets/googlemap-markerclusterer.js"></script>    
+    
+
+    <script type="text/javascript" src="public/scripts/desktop-scripts/MAP-mainscripts.js"></script> <!--load after main plugin MAP-mlpushmenu.js-->
+       
+  
+  <!--<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>-->
+    <script src="public/assets/rotating_menu_icons/jquery-css-transform.js" type="text/javascript"></script>
+    <script src="public/assets/rotating_menu_icons/jquery-animate-css-rotate-scale.js" type="text/javascript"></script>
+        
+        <!--MAIN MENU nav buttons begin here-->
+        <script>  
+
+
+
+/*
+works very good to solve the margin error in LIST PREVIEW but has bugs with the pink map marker
+
+        function showSlider()
+        {
+            FXN_post_events_menu();
+            postEvent.open=true;
+            if(isNaN(postEvent.level) || postEvent.level<=0)
+            {
+                postEvent.level=1;
+            }
+            $("#postNextEvent").click();
+            $("#mp-pusher").addClass('mp-pushed');
+            $(".mp-level").removeClass('mp-level-open');
+            $("#mp-menu-nav2 .mp-level[data-level=\""+postEvent.level+"\"]").addClass('mp-level-open');
+            left=300+(postEvent.level*40)-40;
+            $("#mp-pusher").css('transform','translate3d('+left+'px, 0px, 0px)');
+        }
+*/
+
+//header menu  ends here
+
+</script>
+
+
+
+</body>
+</html>

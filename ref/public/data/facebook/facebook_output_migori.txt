@@ -1,0 +1,78 @@
+------------------1---
+ID: 1567596393485372
+Name: VOTE PATRICK ODIPO JASWETA.- MEMBER OF PARLIAMENT SUNA EAST CONSTITUENCY
+Name2: Migori Town
+Start: 2015-12-10T08:00:00+0300
+Timezone: Africa/Nairobi
+Location: Migori Town
+Latitude: -1.0654672972909
+Longitude: 34.473959689408
+Cover: https://scontent.xx.fbcdn.net/hphotos-xpt1/v/t1.0-9/s720x720/10568883_580175015457691_3586990459062459288_n.jpg?oh=b2bb5ff6cbbe1864e99c73628095a39a&oe=563B41D5
+------------------2---
+ID: 1691996647697384
+Name: 2015 MIGORI CENTRAL CAMP MEETING
+Name2: Migori Central Sda Church
+Start: 2015-08-21T18:00:00+0300
+Timezone: Africa/Nairobi
+Location: Migori Central Sda Church
+Latitude: -1.0974942147732
+Longitude: 34.409330226481
+Cover: https://scontent.xx.fbcdn.net/hphotos-xtp1/t31.0-8/p180x540/11754314_621460974662071_9143254082596222320_o.jpg
+------------------3---
+ID: 1613715605561041
+Name: WOMEN CONFERENCE 2015-KENYA.
+Name2: Nyatike in Migori county. 
+Start: 2015-08-09T19:15:00+0300
+Timezone: Africa/Nairobi
+Location: Nyatike in Migori county. 
+------------------4---
+ID: 1610992942522309
+Name: Wedding Announcement:
+Name2: Migori Central SDA Church:
+Start: 2015-08-09T03:00:00-0400
+Location: Migori Central SDA Church:
+------------------5---
+ID: 1449917508647221
+Name: Migori West 2015 Camp Meeting
+Name2: Kenya, Nyanza, Migori, Oruba, Migori, Box 943, 40400 - Migori
+Start: 2015-08-09
+Location: Kenya, Nyanza, Migori, Oruba, Migori, Box 943, 40400 - Migori
+Cover: https://scontent.xx.fbcdn.net/hphotos-xpt1/t31.0-8/s720x720/11698769_567164843424415_4236201213646534053_o.jpg
+------------------6---
+ID: 113003825713472
+Name: Testing FB Graph-API-3
+Name2: Migori Town
+Start: 2015-08-06T00:20:00+0300
+Timezone: Africa/Nairobi
+Location: Migori Town
+Latitude: -1.0654672972909
+Longitude: 34.473959689408
+Cover: https://scontent.xx.fbcdn.net/hphotos-xpt1/v/t1.0-9/11143637_10207803439587790_8713848017506963866_n.jpg?oh=6d15fa860ea77e0bf3b04fdac9429e28&oe=567D7F0D
+------------------7---
+ID: 1450725448570421
+Name: Testing FB Graph-API-1
+Name2: Migori Town
+Start: 2015-08-05T22:00:00+0300
+Timezone: Africa/Nairobi
+Location: Migori Town
+Latitude: -1.0654672972909
+Longitude: 34.473959689408
+Cover: https://scontent.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/s720x720/11800547_10207803419547289_7493516429428173412_n.jpg?oh=db23d741e8394e72b628f0148208afd1&oe=56417251
+------------------8---
+ID: 733536916769629
+Name: FUNERAL FUND RAISING FOR LATE LYNETTE JALUHA BUSOLO MAGOLO
+Name2: Migori Town
+Start: 2015-08-04T13:00:00-0400
+Location: Migori Town
+Latitude: -1.0654672972909
+Longitude: 34.473959689408
+------------------9---
+ID: 411043429091955
+Name: Testing FB graph API-2 migori
+Name2: Migori Town
+Start: 2015-08-01T02:05:00+0300
+Timezone: Africa/Nairobi
+Location: Migori Town
+Latitude: -1.0654672972909
+Longitude: 34.473959689408
+Cover: https://scontent.xx.fbcdn.net/hphotos-xft1/t31.0-8/s720x720/11838830_10207803439747794_1697035720471044284_o.jpg
